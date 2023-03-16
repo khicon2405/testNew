@@ -1,0 +1,80 @@
+// table {
+//   border-collapse: collapse;
+//   tr {
+//   }
+//   thead {
+//     display: table;
+//     width: 100%;
+//     vertical-align: top;
+
+//     th {
+//       border: 1px solid #dee2e6;
+//       border-bottom: none;
+//       background: #f7f7f7;
+//       padding: 5px;
+//       word-wrap: break-word;
+//       min-height: 100px;
+//     }
+//   }
+
+//   tbody {
+//     display: table;
+//     width: 100%;
+
+//     td {
+//       display: table-cell;
+//       min-height: 30px;
+
+//       padding: 5px;
+//       word-break: break-word;
+//       -ms-word-break: break-all;
+//       border: 1px solid #dee2e6;
+//       border-top: none;
+//     }
+//   }
+//   tfoot {
+//     display: table;
+//     width: 100%;
+
+//     td {
+//       display: table-cell;
+//       min-height: 30px;
+
+//       padding: 5px;
+//       word-break: break-word;
+//       -ms-word-break: break-all;
+//       border: 1px solid #dee2e6;
+//       border-top: none;
+//     }
+//   }
+// }
+
+// .table-transaction {
+//   td,
+//   th {
+//     width: calc(100% / 11);
+//   }
+// }
+
+// .td-bold {
+//   font-weight: 700;
+// }
+.table-responsive {
+  overflow-y: auto;
+  max-height: 750px;
+}
+.table-responsive thead th {
+  position: sticky;
+  top: 0;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th,
+td {
+  border: 1px solid #ccc;
+}
+th {
+  top: -1;
+}

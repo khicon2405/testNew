@@ -1,0 +1,10 @@
+version: '3.3'
+
+services:
+  angular-aa-dev:
+    hostname: localhost
+    container_name: vnpost-report
+    image: vnpost-report/report-fe:${VERSION}
+    ports:
+      - 9004:80
+    restart: always

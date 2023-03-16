@@ -1,0 +1,19 @@
+@import "./ultilities/_variable.scss";
+@import "./ultilities/_variable.color.scss";
+.top-nav .row {
+    width: 100% !important;
+}
+
+.top-nav {
+    z-index: $z-index;
+    min-height: $min-height-topbar;
+    background-color: $color-background-header;
+    background-image: linear-gradient(to right, $color-background-header, $color-background-header-2);
+    text-align: center;
+}
+
+.btn-back {
+    color: #fffafa;
+}
+
+

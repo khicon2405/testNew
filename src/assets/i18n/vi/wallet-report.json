@@ -1,0 +1,131 @@
+{
+  "total-wallet-report": {
+    "title": "Báo cáo số lượng ví",
+    "wallet-type": {
+      "personal": "Ví điện tử cá nhân",
+      "organization": "Ví điện tử tổ chức",
+      "merchant": "Ví điện tử ĐVCNTT",
+      "total": "Tổng số dư ví"
+    },
+    "account-type": {
+      "personal": "Cá nhân",
+      "organization": "Tổ chức",
+      "merchant": "ĐVCNTT"
+    },
+    "status": {
+      "published": "Đã phát hành",
+      "activated": "Đã kích hoạt",
+      "active": "Đang hoạt động",
+      "linked": "Đã liên kết tài khoản NH"
+    },
+    "total": "Tổng số dư ví (VND)",
+    "errors": {
+      "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị."
+    }
+  },
+  "by-period-report": {
+    "title": "Báo cáo ví theo kỳ",
+    "report-type": "Loại báo cáo",
+    "personal-wallet": "Ví điện tử cá nhân",
+    "merchant-wallet": "Ví điện tử ĐVCNTT",
+    "enteprise-wallet": "Ví điện tử tổ chức",
+    "not-merchant": "(Khác ĐVCNTT)",
+    "total-wallet": "Tổng ví",
+    "amount": "SLGD",
+    "value": "GTGD (VND)",
+    "fee": "Phí GD (VND)",
+    "total": "Tổng cộng (VND)",
+    "cashin": "Giao dịch nạp tiền NHLK:MB",
+    "cashout": "Giao dịch rút tiền",
+    "transfer": "Giao dịch chuyển tiền",
+    "system-trans": "Giao dịch xử lý qua hệ thống",
+    "fail-trans": "Giao dịch thất bại",
+    "success-trans": "Giao dịch thành công",
+    "timeout-trans": "Giao dịch timeout",
+    "deposit-bank": "Ghi nợ (ngân hàng nạp)",
+    "receive-bank": "Ghi có (ngân hàng nhận)",
+    "total-bank": "Chênh lệch nợ/có",
+    "customer-name": "Tên khách hàng",
+    "account-type": "Loại tài khoản",
+    "begin-value": "Dư nợ đầu kỳ (VND)",
+    "end-value": "Dư nợ cuối kỳ (VND)",
+    "out-value": "Phát sinh nợ trong kỳ (VND)",
+    "in-value": "Phát sinh có trong kỳ (VND)",
+    "in-bank": "NHLK nhận",
+    "sum": "Tổng cộng",
+    "errors": {
+      "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị.",
+      "03": "Khoảng thời gian tìm kiếm quá lớn",
+      "04": "Cần nhập/chọn đầy đủ từ ngày và đến ngày",
+      "400": "Khoảng thời gian tìm kiếm không hợp lệ"
+    },
+    "report-list": {
+      "1": "Tổng số lượng và tổng giá trị giao dịch",
+      "2": "Ghi nợ, ghi có tài khoản ĐBTT",
+      "3": "Top 10 ví điện tử có số lượng/giá trị giao dịch lớn"
+    }
+  },
+  "partner-info-report": {
+    "title": "Báo cáo thông tin đối tác",
+    "quarter": "Quý",
+    "year": "Năm",
+    "target": "Chỉ tiêu",
+    "amount": "Số lượng",
+    "info": "Thông tin",
+    "merchant-amount": "Số lượng ĐVCNTT",
+    "value": "Giá trị",
+    "errors": {
+      "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị."
+    },
+    "report-list": {
+      "1": "Loại khách hàng",
+      "2": "Ngân hàng hợp tác",
+      "3": "Thông tin ví điện tử"
+    },
+    "customer-type": {
+      "personal": "Khách hàng cá nhân",
+      "organization": "Khách hàng tổ chức",
+      "merchant": "Đơn vị chấp nhận thanh toán"
+    },
+    "wallet-info": {
+      "name": "Tên ví điện tử",
+      "app-name": "Tên ứng dụng",
+      "website": "Địa chỉ trang web"
+    }
+  },
+  "transaction-info-report": {
+    "title": "Báo cáo tình hình giao dịch",
+    "system-trans": {
+      "time": "Tháng",
+      "success": "GD xử lý thành công",
+      "fail": "GD xử lý không thành công",
+      "payment": "GD thanh toán, chuyển tiền bằng VĐT",
+      "cashin": "GD nạp tiền vào VĐT",
+      "cashout": "GD rút tiền VĐT",
+      "in-day": "GD trong ngày cao điểm"
+    },
+    "enterprise-customer": {
+      "customer": "GD của KH tổ chức",
+      "enterprise": "Tên tổ chức"
+    },
+    "personal-customer": {
+      "customer": "GD cá nhân"
+    },
+    "merchant": "GD của ĐVCNTT",
+    "report-list": {
+      "1": "GD toàn hệ thống",
+      "2": "GD của KH tổ chức",
+      "3": "Top SLGD/GTGD của KH tổ chức",
+      "4": "GD của KH cá nhân",
+      "5": "Top SLGD/GTGD của KH cá nhân",
+      "6": "GD của ĐVCNTT",
+      "7": "Top SLGD/GTGD của ĐVCNTT"
+    }
+  },
+  "quarter-list": {
+    "1": "Quý 1",
+    "2": "Quý 2",
+    "3": "Quý 3",
+    "4": "Quý 4"
+  }
+}

@@ -1,0 +1,333 @@
+{
+  "reconcile-non-financial": {
+    "title": "Kết quả đối soát giao dịch phi tài chính",
+
+    "placeholder": {
+      "trans-type": "Loại dịch vụ",
+      "trans-channel": "Kênh giao dịch",
+      "reconcile-code": "Mã đối soát",
+      "reconcile-date-from": "Ngày ĐS từ",
+      "reconcile-date-to": "Ngày ĐS đến",
+      "search-text": "Tìm kiếm theo tên khác hàng và số giấy tờ tỳ thân"
+    },
+    "header": {
+      "no": "STT",
+      "trans-type": "Loại dịch vụ",
+      "pg-trans-id": "Mã GD CTT",
+      "mb-trans-id": "Mã giao dịch MB",
+      "customer-name": "Tên khách hàng",
+      "id-no": "Số GTTT",
+      "phone": "Số ĐT",
+      "wallet-id": "Mã ví",
+      "linked-account": "Số tk liên kết",
+      "trans-status": "Trạng thái giao dịch",
+      "trans-date-time": "Ngày giao dịch",
+      "reconcile-code": "Mã đối soát",
+      "reconcile-detail": "Mô tả kết quả đối soát",
+      "update-datetime": "Ngày cập nhật",
+      "excute-status": "Trạng thái xử lý"
+    },
+    "button": {
+      "search": "Tìm kiếm",
+      "export-excel": "Xuất file KQĐS"
+    },
+    "details": {
+      "title": "Chi tiết kết quả đối soát giao dịch phi tài chính",
+      "result": {
+        "title": "Kết quả đối soát",
+        "code": "Mã đối soát",
+        "description": "Mô tả KQĐS",
+        "time-update": "Thời gian cập nhật KQĐS"
+      },
+      "infor-client": {
+        "title": "Thông tin khách hàng",
+        "type-transaction": "Loại giao dịch",
+        "channel-transaction": "Kênh giao dịch",
+        "code-client": "Mã khách hàng",
+        "full-name": "Họ và tên",
+        "phone-number": "Số điện thoại",
+        "date-of-birth": "Ngày sinh",
+        "gender": "Giới tính",
+        "email": "Địa chỉ email",
+        "type-GTTT": "Loại GTTT",
+        "no-GTTT": "Số GTTT",
+        "date-GTTT": "Ngày cấp GTTT",
+        "add-GTTT": "Nơi cấp GTTT",
+        "created-date": "Ngày tạo TK",
+        "type-account": "Loại tài khoản",
+        "status-account": " Trạng thái tài khoản"
+      },
+      "infor-original-transaction": {
+        "title": "Thông tin giao dịch gốc",
+        "table": {
+          "system": "Hệ thống",
+          "code": "Mã giao dịch",
+          "transaction-time": "Thời gian giao dịch",
+          "name-client": "Tên khách hàng",
+          "no-id": "Số giấy tờ tùy thân",
+          "phone-number": "Số điện thoại",
+          "code-wallet": "Mã ví",
+          "no-account": "Số tài khoản / số thẻ",
+          "processing-time": "Thời gian xử lý",
+          "status": "Trạng thái"
+        }
+      },
+      "infor-linked": {
+        "title": "Thông tin liên kết",
+        "table": {
+          "infor-card": "Thông tin thẻ liên kết",
+          "history-card": "Lịch sử liên kết thẻ",
+          "bank-id": "BankID",
+          "no-account": "Số tài khoản / số thẻ",
+          "name-account": "Tên chủ thẻ",
+          "status-linked": "Trạng thái liên kết",
+
+          "updated-date-link": "Thời gian update trạng thái liên kết",
+          "type-transaction": "Loại giao dịch",
+          "code-transaction-CTT": "Mã GD liên kết CTT",
+          "code-transaction-MB": "Mã GD liên kết MB",
+          "status-transaction-link": "Trạng thái GD liên kết",
+          "processing-link-time": "Thời gian giao dịch liên kết",
+          "napas-id": "Napas TransID",
+          "money-link": "Số tiền liên kết"
+        }
+      },
+      "infor-fee": {
+        "title": "Thông tin phí",
+        "table": {
+          "type": "Loại phí",
+          "fee-DVCNTT": "Phí thu ĐVCNTT (VND)",
+          "fee-paid-DVCNTT": "Phí trả ĐVCNTT (VND)",
+          "fee-paid-CTV": "Phí trả Đại lý / CTV (VND)",
+          "turnover": "Doanh thu CTT (VND)"
+        }
+      }
+    }
+  },
+  "reconcile-paygate-financial": {
+    "title": "Kết quả đối soát giao dịch thanh toán",
+    "placeholder": {
+      "trans-type": "Loại dịch vụ",
+      "payment-method": "Phương thức thanh toán",
+      "trans-channel": "Kênh giao dịch",
+      "reconcile-code": "Mã đối soát",
+      "reconcile-date-from": "Ngày ĐS từ",
+      "reconcile-date-to": "Ngày ĐS đến",
+      "search-text": "Tìm kiếm theo mã giao dịch mã đơn hàng"
+    },
+    "header": {
+      "no": "STT",
+      "trans-type": "Loại dịch vụ",
+      "bav-order-id": "Mã đơn hàng BAV",
+      "pg-trans-id": "Mã GD CTT",
+      "mb-trans-id": "Mã GD MB",
+      "amount": "Số tiền thanh toán",
+      "currency-type": "Loại tiền tệ",
+      "trans-status": "Trạng thái giao dịch",
+      "payment-method": "Phương thức thanh toán",
+      "payment-type": "Loại giao dịch",
+      "OrderID": "Order ID",
+      "issuer": "Tổ chức phát hành",
+      "payment-account": "Tài khoản thanh toán",
+      "trans-date-time": "Ngày giao dịch",
+      "payment-channel": "Kênh GD",
+      "reconcile-code": "Mã đối soát",
+      "reconcile-detail": "Mô tả kết quả đối soát",
+      "update-datetime": "Ngày cập nhật",
+      "excute-status": "Trạng thái xử lý"
+    },
+    "button": {
+      "search": "Tìm kiếm",
+      "excel-export": "Xuất file KQĐS"
+    },
+    "details": {
+      "title": "Chi tiết kết quả đối soát giao dịch thanh toán",
+      "result": {
+        "title": "Kết quả đối soát",
+        "code": "Mã đối soát",
+        "description": "Mô tả KQĐS",
+        "time-update": "Thời gian cập nhật KQĐS"
+      },
+      "infor-pay": {
+        "title": "Thông tin thanh toán",
+        "name-guest": "Tên khách hàng",
+        "card-number": "Số thẻ/tài khoản",
+        "pay-method": "Phương thức thanh toán",
+        "pay-channel": "Kênh giao dịch",
+        "code-TCPH": "Mã TCPH",
+        "issuers": "Tên tổ chức phát hành"
+      },
+      "infor-original-transaction": {
+        "title": "Thông tin giao dịch gốc",
+        "table": {
+          "system": "Hệ thống",
+          "code": "Mã giao dịch/ Mã đơn hàng",
+          "transaction-time": "Thời gian giao dịch",
+          "money": "Số tiền",
+          "currency": "Đơn vị tiền tệ",
+          "processing-time": "Thời gian xử lý",
+          "status": "Trạng thái"
+        }
+      },
+      "infor-history-refund": {
+        "title": "Lịch sử hoàn trả",
+        "table": {
+          "code-refund-ITE": "Mã giao dịch hoàn tiền ITE",
+          "code-refund-BAV": "Mã giao dịch hoàn tiền BAV",
+          "code-refund-MB": "Mã giao dịch hoàn tiền MB",
+          "monney-refund": "Số tiền hoàn",
+          "currency": "Đơn vị tiền tệ",
+          "refund-method": "Phương thức hoàn tiền",
+          "user-create": "Người tạo",
+          "time-refund": "Thời gian hoàn thực tế",
+          "status-refund": "Trạng thái hòan tiền"
+        }
+      },
+      "infor-fee": {
+        "title": "Thông tin phí",
+        "table": {
+          "type": "Loại phí",
+          "fee-DVCNTT": "Phí thu ĐVCNTT",
+          "fee-paid-DVCNTT": "Phí trả ĐVCNTT",
+          "fee-paid-CTV": "Phí trả Đại lý / CTV",
+          "turnover": "Doanh thu CTT"
+        }
+      }
+    }
+  },
+  "reconcile-wallet-financial": {
+    "title": "Kết quả đối soát giao dịch tài chính",
+    "placeholder": {
+      "trans-type": "Loại dịch vụ",
+      "payment-method": "Phương thức thanh toán",
+      "trans-channel": "Kênh giao dịch",
+      "reconcile-code": "Mã đối soát",
+      "reconcile-date-from": "Ngày ĐS từ",
+      "reconcile-date-to": "Ngày ĐS đến",
+      "search-text": "Tìm kiếm theo mã giao dịch CTT, mã giao dịch MB"
+    },
+    "header": {
+      "no": "STT",
+      "trans-type": "Loại dịch vụ",
+      "pg-trans-id": "Mã GD CTT",
+      "mb-trans-id": "Mã GD MB",
+      "amount": "Số tiền",
+      "trans-status": "Trạng thái giao dịch",
+      "payment-method": "Phương thức thanh toán",
+      "ori-account": "TK nguồn",
+      "dest-account": "TK đích",
+      "trans-date": "Ngày giao dịch",
+      "channel": "Kênh GD",
+      "reconcile-code": "Mã đối soát",
+      "reconcile-detail": "Mô tả kết quả đối soát",
+      "update-datetime": "Ngày cập nhật",
+      "excute-status": "Trạng thái xử lý"
+    },
+    "button": {
+      "search": "Tìm kiếm",
+      "excel-export": "Xuất file KQĐS"
+    },
+    "details": {
+      "title": "Chi tiết kết quả đối soát giao dịch tài chính",
+      "result": {
+        "title": "Kết quả đối soát",
+        "code": "Mã đối soát",
+        "description": "Mô tả KQĐS",
+        "time-update": "Thời gian cập nhật KQĐS"
+      },
+      "general-infor": {
+        "title": "Thông tin chung",
+        "type-transaction": "Loại giao dịch",
+        "channel-transaction": "Kênh GD",
+        "method-transaction": "Phương thức TT",
+        "start-card": "STK / Thẻ nguồn",
+        "end-card": "STK / Thẻ đích",
+        "account-name": "Chủ tài khoản",
+        "bank-id": "BankID (nếu có)",
+        "response-code-mb": "Response Code MB"
+      },
+      "infor-original-transaction": {
+        "title": "Thông tin giao dịch gốc",
+        "table": {
+          "system": "Hệ thống",
+          "code": "Mã giao dịch",
+          "transaction-time": "Thời gian giao dịch",
+          "money": "Số tiền",
+          "currency": "Đơn vị tiền tệ",
+          "start-account": "Tài khoản nguồn",
+          "end-account": "Tài khoản đích",
+          "processing-time": "Thời gian xử lý",
+          "status": "Trạng thái"
+        }
+      },
+      "infor-fee": {
+        "title": "Thông tin phí",
+        "table": {
+          "type": "Loại phí",
+          "fee-DVCNTT": "Phí thu ĐVCNTT (VND)",
+          "fee-paid-DVCNTT": "Phí trả ĐVCNTT (VND)",
+          "fee-paid-CTV": "Phí trả Đại lý / CTV (VND)",
+          "turnover": "Doanh thu CTT (VND)"
+        }
+      }
+    }
+  },
+  "reconcile-report": {
+    "title": "Báo cáo tổng hợp",
+    "placeholder": {
+      "trans-type": "Loại dịch vụ",
+      "from-date": "Ngày ĐS từ",
+      "to-date": "Ngày ĐS đến"
+    },
+    "header": {
+      "no": "STT",
+      "service-type": "Loại dịch vụ",
+      "trans-date": "Ngày giao dịch",
+      "match-trans": "Giao dịch cân khớp",
+      "more-MB": "Chênh lệch thừa MB",
+      "more-BAV": "Chênh lệch thừa BAV",
+      "sum-quantity": "Tổng số lượng",
+      "sum-amount": "Tổng giá trị",
+      "sum-fee": "Tổng fee"
+    },
+    "button": {
+      "search": "Tìm kiếm",
+      "excel-export": "Xuất file KQĐS"
+    }
+  },
+  "reconcile-all": {
+    "trans-type": "Tất cả Loại dịch vụ",
+    "trans-channel": "Tất cả kênh giao dịch",
+    "reconcile-code": "Tất cả mã đối soát",
+    "payment-methods": "Tất cả phương thức thanh toán",
+    "service": "Tất cả dịch vụ",
+    "status": "Tất cả các trạng thái",
+    "refund-methods": "Tất cả các phương thức hoàn trả"
+  },
+  "reconcile-manager": {
+    "title": "Quản lý đối soát",
+    "reconcileManager": {
+      "title": "Chạy đối soát tay",
+      "placeholder": {
+        "reconcile-date": "Ngày đối soát",
+        "description": "Nhập mô tả."
+      },
+      "button": {
+        "SendFile": "Xuất file đối soát",
+        "RunJob": "Chạy đối soát"
+      }
+    },
+    "sendFileReconcile": {
+      "title": "Gửi file đối soát cho MB",
+      "placeholder": {
+        "reconcile-date": "Phiên đối soát",
+        "description": "Nhập mô tả.",
+        "nameSpecific": "Phiên đặc biệt",
+        "date-specific": "Danh sách đối soát"
+      },
+      "button": {
+        "SendFile": "Xuất file đối soát"
+      }
+    }
+  }
+}

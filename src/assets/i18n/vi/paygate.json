@@ -1,0 +1,60 @@
+{
+    "paygate-transaction": {
+        "title": "Danh sách giao dịch cổng thanh toán",
+        "trans-no": "Mã GD",
+        "merchant": "Tất cả ĐVCNTT",
+        "status": "Tất cả trạng thái GD",
+        "table-header": {
+            "time": "Thời gian GD",
+            "merchant": "ĐVCNTT",
+            "value": "Số tiền (VND)",
+            "order-no": "Mã đơn hàng",
+            "payment-method": "Phương thức TT",
+            "account": "Tài khoản TT",
+            "status": "Trạng thái GD",
+            "action": "Tác vụ"
+        },
+        "detail": {
+            "discount": "Khuyến mãi",
+            "paygate-error": "Mã lỗi CTT",
+            "issuer-error": "Mã lỗi TCPH",
+            "token-error": "Mã lỗi token"
+        },
+        "customer-info": {
+            "title": "Thông tin khách hàng",
+            "name": "Tên khách hàng",
+            "account": "Số thẻ/Tài khoản TT",
+            "issuer": "Tổ chức phát hành",
+            "channel": "Kênh giao dịch"
+        },
+        "merchant-info": {
+            "title": "Thông tin ĐVCNTT",
+            "name": "Tên ĐVCNTT",
+            "phone": "Số điện thoại",
+            "address": "Địa chỉ"
+        },
+        "top": {
+            "title": "Top ĐVCNTT có số lượng/giá trị giao dịch nhiều nhất trong kỳ báo cáo",
+            "career": "Ngành nghề kinh doanh"
+        },
+        "status-list": {
+            "success": "Thành công",
+            "error": "Lỗi",
+            "waiting_approval": "Chờ phê duyệt",
+            "waiting_verify": "Chờ xác thực"
+        },
+        "payment-method": {
+            "wallet": "Ví điện tử",
+            "card": "Thẻ nội địa"
+        },
+        "errors": {
+            "99": "Hệ thống tạm thời gián đoạn"
+        },
+        "report": {
+            "amount-success": "SLGD xử lý thành công",
+            "value-success": "GTGD xử lý thành công",
+            "amount-fail": "SLGD xử lý không thành công",
+            "value-fail": "GTGD không thành công"
+        }
+    }
+}

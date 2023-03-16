@@ -1,0 +1,127 @@
+{
+  "total-wallet-report": {
+    "title": "Report number of wallets",
+    "wallet-type": {
+      "personal": "Personal e-wallet",
+      "organization": "Organizational wallet",
+      "merchant": "E-wallet for IITs",
+      "total": "Total wallet balance"
+    },
+    "account-type": {
+      "personal": "Personal",
+      "organization": "Organization",
+      "merchant": "Specialist"
+    },
+    "status": {
+      "published": "Published",
+      "activated": "Activated",
+      "active": "Active",
+      "linked": "Linked NH account"
+    },
+    "total": "Total wallet balance (VND)",
+    "errors": {
+      "99": "The system is temporarily down. Please contact the administrator."
+    }
+  },
+  "by-period-report": {
+    "title": "Regular wallet report",
+    "report-type": "Report-type",
+    "personal-wallet": "Personal wallet",
+    "merchant-wallet": "E-wallet of IITs",
+    "enteprise-wallet": "Organizational e-wallet",
+    "not-merchant": "(Different from ITC)",
+    "total-wallet": "Total wallet",
+    "amount": "SLGD",
+    "value": "VAT (VND)",
+    "fee": "GD fee (VND)",
+    "total": "Total (VND)",
+    "cashin": "Deposit transaction base MB linked account",
+    "cashout": "Withdrawal transaction",
+    "transfer": "Transaction of money transfer",
+    "system-trans": "Transactions are processed through the system",
+    "fail-trans": "Transaction failed",
+    "success-trans": "Successful transaction",
+    "timeout-trans": "timeout transaction",
+    "deposit-bank": "Debit (deposit bank)",
+    "receive-bank": "Credit (receiving bank)",
+    "total-bank": "Debt/credit difference",
+    "customer-name": "Customer name",
+    "account-type": "Account type",
+    "begin-value": "Starting balance (VND)",
+    "end-value": "Lending balance (VND)",
+    "out-value": "Increasing debt in the period (VND)",
+    "in-value": "Incurred in the period (VND)",
+    "in-bank": "receiving NHLK",
+    "sum": "Total",
+    "errors": {
+      "99": "The system is temporarily down. Please contact the administrator.",
+      "03": "Search interval too large",
+      "04": "Need to enter/select full date from and to date",
+      "400": "Invalid search interval"
+    },
+    "report-list": {
+      "1": "Total amount and e-wallet balance",
+      "2": "Total quantity/transaction of 2 parties",
+      "3": "Top e-wallets with large transaction volume/value"
+    }
+  },
+  "partner-info-report": {
+    "title": "Report partner information",
+    "quarter": "quarter",
+    "year": "Year",
+    "target": "Target",
+    "amount": "Amount",
+    "info": "E-wallet",
+    "merchant-amount": "Number of IT units",
+    "value": "Value (VND)",
+    "errors": {
+      "99": "The system is temporarily down. Please contact the administrator."
+    },
+    "quarter-list": {
+      "1": "Q1",
+      "2": "Q2",
+      "3": "Q3",
+      "4": "Q4"
+    },
+    "report-list": {
+      "1": "Customer Type",
+      "2": "Cooperative Bank",
+      "3": "E-wallet information"
+    }
+  },
+  "transaction-info-report": {
+    "title": "Transaction status report",
+    "system-trans": {
+      "time": "Month",
+      "success": "GD processed successfully",
+      "fail": "GD processing failed",
+      "payment": "GD payment, money transfer by VDT",
+      "cashin": "GD recharges VDT",
+      "cashout": "GD withdraws VDT",
+      "in-day": "GD during peak day"
+    },
+    "enterprise-customer": {
+      "customer": "Transactions of institutional customers",
+      "enterprise": "Name of organization"
+    },
+    "personal-customer": {
+      "customer": "Personal transaction"
+    },
+    "merchant": "Transactions of IITs",
+    "report-list": {
+      "1": "System-wide GD",
+      "2": "education of the organization customer",
+      "3": "Top sales volume / turnover of the organization customer",
+      "4": "education of individual customers",
+      "5": "Top sales/value of individual customers",
+      "6": "Education of ICTs",
+      "7": "Top sales volume/value-for-money of ICT units"
+    }
+  },
+  "quarter-list": {
+    "1": "The 1st quarter",
+    "2": "The 2nd quarter",
+    "3": "The 3rd quarter",
+    "4": "The 4th quarter"
+  }
+}

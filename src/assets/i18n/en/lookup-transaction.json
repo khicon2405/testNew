@@ -1,0 +1,155 @@
+{
+  "lookup-transaction-payment": {
+    "title": "Tra cứu giao dịch thanh toán",
+    "placeholder": {
+      "trans-type": "Loại dịch vụ",
+      "trans-methods": "Phương thức TT",
+      "transaction-channel": "Kênh giao dịch",
+      "trans-status": "Trạng thái giao dịch",
+      "date-from": "Ngày tra cứu từ",
+      "date-to": "Ngày tra cứu đến",
+      "search-text": "Tìm kiếm theo mã giao dịch, mã đơn hàng, mã giao dịch MB, OrderId,..."
+    },
+    "button": {
+      "search": "Tìm kiếm",
+      "export-excel": "Xuất file"
+    },
+    "header": {
+      "no": "STT",
+      "trans-type": "Loại giao dịch",
+      "order_bav": "Mã đơn hàng - BAV",
+      "transaction-number": "Mã giao dịch tải CTT",
+      "transaction-mb": "Mã giao dịch MB",
+      "order-id": "OrderId (MB trả về)",
+      "amount": "Số tiền thanh toán",
+      "transaction-status": "Trạng thái GD",
+      "transaction-time": "Thời gian giao dịch",
+      "payment-methods": "PTTT",
+      "issuers": "Tổ chức phát hành",
+      "payment-account": "Tài khoản thanh toán",
+      "account-holder": "Chủ tài khoản",
+      "transaction-channel": "Kênh giao dịch"
+    },
+    "details": {
+      "title": "Chi tiết tra cứu giao dịch",
+      "result": {
+        "title": "Thông tin giao dịch",
+        "order-bav": "Mã đơn hàng",
+        "dvcntt-code": "Mã ĐVCNTT",
+        "name-dvtt": "Tên CNTT",
+        "transaction-number": "Mã giao dịch CTT",
+        "transaction-time": "Ngày giao dịch",
+        "transaction-status": "Trạng thái giao dịch",
+        "amount": "Số tiền giao dịch",
+        "promotions": "Khuyến mại",
+        "des-trans": "Nội dung giao dịch",
+        "transaction-mb": "Mã giao dịch MB",
+        "orderid-mb": "Mã OrderId MB",
+        "mb-reponse-code": "MB response Code"
+      },
+      "transaction-info": {
+        "title": "Thông tin thanh toán",
+        "customer-name": "Tên khách hàng",
+        "account": "Số thẻ/ tài khoản",
+        "payment-methods": "Phương thức thanh toán",
+        "trans-channels": "Kênh giao dịch",
+        "issuers-code": "Mã TCPH",
+        "issuers-name": "Tên tổ chức phát hành"
+      },
+      "refund-history": {
+        "title": "Lịch sử hoàn tiền",
+        "table": {
+          "no": "STT",
+          "refund-ite-code": "Mã giao dịch hoàn trả ITE",
+          "refund-bav-code": "Mã giao dịch hoàn trả BAV",
+          "refund-mb-code": "Mã giao dịch hoàn trả MB",
+          "refund-amount": "Số tiền hoàn trả",
+          "currency-type": "Đơn vị tiền tệ",
+          "refund-methods": "Phương thức hoàn trả",
+          "user-refund": "User hoàn trả",
+          "refund-time": "Thời gian hoàn trả",
+          "refund-status": "Trạng thái hoàn trả"
+        }
+      },
+      "infor-fee": {
+        "title": "Thông tin phí",
+        "table": {
+          "type": "Loại phí",
+          "fee-DVCNTT": "Phí thu ĐVCNTT (VND)",
+          "fee-paid-DVCNTT": "Phí trả ĐVCNTT (VND)",
+          "fee-paid-CTV": "Phí trả Đại lý / CTV (VND)",
+          "turnover": "Doanh thu CTT (VND)"
+        }
+      }
+    }
+  },
+  "lookup-transaction-refund": {
+    "title": "Tra cứu giao dịch thanh toán",
+    "placeholder": {
+      "trans-type": "Loại giao dịch",
+      "trans-methods-ctt": "Phương thức hoàn trả phí CTT",
+      "trans-status": "Trạng thái GD",
+      "date-from": "Ngày hoàn trả từ",
+      "date-to": "Ngày hoàn trả đến",
+      "search-text": "Tìm kiếm theo mã giao dịch hoàn trả"
+    },
+    "button": {
+      "search": "Tìm kiếm",
+      "export-excel": "Xuất file"
+    },
+    "header": {
+      "no": "STT",
+      "trans-type": "Loại giao dịch",
+      "order_bav": "Mã hoàn trả Merchant (BAV)",
+      "transaction-number": "Mã hoàn trả CTT",
+      "transaction-mb": "Mã giao dịch MB",
+      "refund-amount": "Số tiền hoàn",
+      "refund-status": "Trạng thái hoàn",
+      "request-refund-time": "Thời gian yêu cầu hoàn trả",
+      "actual-return-time": "Thời gian hoàn trả thực tế",
+      "refund-methods-ctt": "Phương thức hoàn trả CTT",
+      "refund-methods-tcph": "Phương thức hoàn trả TCPH",
+      "transaction-account": "Tài khoản thanh toán",
+      "account-holder": "Chủ tài khoản"
+    },
+    "details": {
+      "title": "Chi tiết giao dịch hoàn trả",
+      "refund-info": {
+        "title": "Thông tin giao dịch hoàn trả",
+        "trans-refund-ITE": "Mã GD hoàn trả ITE",
+        "trans-refund-merchant": "Mã GD hoàn trả Merchant",
+        "trans-refund-tcph": "Mã GD hoàn trả TCPH",
+        "refund-amount": "Số tiền hoàn trả",
+        "refund-methods": "Phương thức hoàn trả tiền CTT",
+        "refund-methods-tcph": "PT hoàn trả đầu TCPH",
+        "refund-requester": "Người yêu cầu hoàn trả",
+        "request-refund-time": "Thời gian yêu cầu hoàn trả",
+        "actual-return-time": "Thời gian thực tế",
+        "refund-status": "Trạng thái hoàn",
+        "refund-des": "Nội dung hoàn trả"
+      },
+      "transaction-other": {
+        "title": "Giao dịch liên quan",
+        "table": {
+          "transaction-number": "Mã giao dịch",
+          "amount": "Số tiền (VND)",
+          "transaction-origin": "Mã giao dịch gốc",
+          "transaction-status": "Trạng thái giao dịch",
+          "transaction-type": "Loại giao dịch",
+          "methods": "PTTT/PT hoàn",
+          "transaction-time": "Thời gian giao dich"
+        }
+      },
+      "infor-fee": {
+        "title": "Thông tin phí",
+        "table": {
+          "type": "Loại phí",
+          "fee-DVCNTT": "Phí thu ĐVCNTT (VND)",
+          "fee-paid-DVCNTT": "Phí trả ĐVCNTT (VND)",
+          "fee-paid-CTV": "Phí trả Đại lý / CTV (VND)",
+          "turnover": "Doanh thu CTT (VND)"
+        }
+      }
+    }
+  }
+}

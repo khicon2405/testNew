@@ -1,0 +1,156 @@
+<mat-card class="transaction-management common-management">
+  <mat-card-content>
+    <mat-card-title class="w-100 mb-4">
+      <div class="row mr-0">
+        <div class="col-md-6">
+          <span class="title page-title">{{ 'reconcile-report.title' | translate}}</span>
+        </div>
+        <!-- <div class="col-md-6 d-flex justify-content-end pr-0">
+            <button mat-raised-button (click)="exportToExcel()" class="button-search">
+              <i class="fa fa-download"></i>
+              {{ "wallet-register.button.export-excel" | translate }}
+            </button>
+        </div> -->
+      </div>
+      <div class="search-form mt-4">
+        <form [formGroup]="searchForm" (ngSubmit)="searchData()">
+          <div class="row w-100 mr-0 ml-0">
+            <div class="col-12 col-xl-10 pl-0 pr-0 select-container">
+              <mat-select class="form-control item-6" formControlName="listTransType" disableOptionCentering multiple
+                panelClass="ct-select-position dialog-select" placeholder="{{ 'reconcile-report.placeholder.trans-type'| translate }}">
+                <mat-option #allSelected (click)="toggleAllSelection()" value="">{{ 'reconcile-all.service'| translate }}</mat-option>
+                <mat-option *ngFor="let item of transTypeLists" value="{{item.value}}">
+                  {{ item.desc | translate }}
+                </mat-option>
+              </mat-select>
+              <mat-form-field class="ct-datepicker custom-position form-control item-1" floatLabel="never">
+                <i class="fa fa-calendar ct-date-icon" (click)="dp1.toggle()" [attr.aria-expanded]="dp1.isOpen"></i>
+                <input matInput  type="text" [placeholder]="'reconcile-report.placeholder.from-date' | translate"
+                  formControlName="fromDate" maxlength="10" bsDatepicker container="" placement="auto"
+                  #dp1="bsDatepicker" [maxDate]="currentDay" [bsConfig]="dateConfig" (keypress)="keyPressDate($event)"
+                  autocomplete="off" (change)="isInvalidDate($event, 'fromDate')" maxlength="10"
+                  (keyup.enter)="searchData()" />
+
+              </mat-form-field>
+              <mat-form-field class="ct-datepicker custom-position form-control item-2" floatLabel="never">
+                <i class="fa fa-calendar ct-date-icon" (click)="dp2.toggle()" [attr.aria-expanded]="dp2.isOpen"></i>
+                <input matInput type="text" [placeholder]="'reconcile-report.placeholder.to-date' | translate"
+                  formControlName="toDate" maxlength="10" bsDatepicker container="" placement="auto" #dp2="bsDatepicker"
+                  [maxDate]="currentDay" [bsConfig]="dateConfig" (keypress)="keyPressDate($event)" autocomplete="off"
+                  (change)="isInvalidDate($event, 'toDate')" maxlength="10" (keyup.enter)="searchData()" />
+              </mat-form-field>
+              <!-- <input type="text" formControlName="textSearch" class="form-control item-3"
+                [placeholder]="'wallet-cashin.placeholder.transaction-id' | translate" /> -->
+
+            </div>
+            <div class="col-12 col-xl-2 pr-0 button-container">
+              <button mat-raised-button class="button-search">
+                <i class="fa fa-search"></i>
+                {{ 'reconcile-report.button.search' | translate }}
+              </button>
+              <button  type="button" mat-raised-button class="button-search ml-2 pl-2 pr-2" style="background: #ff5e00;" (click)="exportFileExcel()" >
+                <i class="fa fa-cloud-download mr-1"></i>
+                {{ 'reconcile-report.button.excel-export' | translate }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-card-title>
+    <div class="table-responsive table-hover">
+      <table class="management-table table">
+        <thead>
+          <tr>
+            <th class="col-no" rowspan="2">
+              {{ 'reconcile-non-financial.header.no' | translate }}
+            </th>
+            <th class="col-name" rowspan="2">
+              {{ 'reconcile-report.header.service-type' | translate }}
+            </th>
+            <th class="col-name" colspan="3">
+              {{ 'reconcile-report.header.match-trans' | translate }}
+            </th>
+            <th class="col-name" colspan="3">
+              {{ 'reconcile-report.header.more-MB' | translate }}
+            </th>
+            <th class="col-name" colspan="3">
+              {{ 'reconcile-report.header.more-BAV' | translate }}
+            </th>
+          </tr>
+          <tr>
+            <th class="col-name">
+              {{ 'reconcile-report.header.sum-quantity' | translate }}
+            </th>
+            <th class="col-name">
+              {{ 'reconcile-report.header.sum-amount' | translate }}
+            </th>
+            <th class="col-name">
+              {{ 'reconcile-report.header.sum-fee' | translate }}
+            </th>
+            <th class="col-name">
+              {{ 'reconcile-report.header.sum-quantity' | translate }}
+            </th>
+            <th class="col-name">
+              {{ 'reconcile-report.header.sum-amount' | translate }}
+            </th>
+            <th class="col-name">
+              {{ 'reconcile-report.header.sum-fee' | translate }}
+            </th>
+            <th class="col-name">
+              {{ 'reconcile-report.header.sum-quantity' | translate }}
+            </th>
+            <th class="col-name">
+              {{ 'reconcile-report.header.sum-amount' | translate }}
+            </th>
+            <th class="col-name">
+              {{ 'reconcile-report.header.sum-fee' | translate }}
+            </th>
+          </tr>
+        </thead>
+        <tbody *ngIf="dataTable && dataTable.length">
+          <tr *ngFor="let item of dataTable; let i = index" class="pointer">
+            <td *ngIf="item.dich_vu != 'TỔNG CỘNG'" class="col-no text-center">
+              {{ ((page-1)*pageSize) + i + 1 }}
+            </td>
+            <td *ngIf="item.dich_vu != 'TỔNG CỘNG'" class="col-dich_vu text-center">
+              {{item.dich_vu }}
+            </td>
+            <td *ngIf="item.dich_vu == 'TỔNG CỘNG'" class="col-no col-dich_vu text-center" colspan=2 style="color: blue;">
+              {{item.dich_vu }}
+            </td>
+            <td class="col-can_khop_SLGD text-center">
+              {{ formatMoney(item.can_khop_SLGD,0,3) }}
+            </td>
+            <td class="col-can_khop_DS text-center">
+              {{ formatMoney(item.can_khop_DS,0,3) }}
+            </td>
+
+            <td class="col-can_khop_phi text-center">
+              {{ formatMoney(item.can_khop_phi,0,3) }}
+            </td>
+            <td class="col-thua_MB_SLGD text-center">
+              {{ formatMoney(item.cL_thua_MB_SLGD,0,3) }}
+            </td>
+            <td class="col-cL_thua_MB_DS text-center">
+              {{ formatMoney(item.cL_thua_MB_DS,0,3) }}
+            </td>
+
+            <td class="col-thua_MB_phi text-center">
+              {{ formatMoney(item.cL_thua_MB_phi,0,3) }}
+            </td>
+            <td class="col-thua_BAV_SLGD text-center">
+              {{ formatMoney(item.cL_thua_BAV_SLGD,0,3) }}
+            </td>
+            <td class="col-thua_BAV_DS text-center">
+              {{ formatMoney(item.cL_thua_BAV_DS,0,3) }}
+            </td>
+
+            <td class="col-thua_BAV_phi text-center">
+              {{ formatMoney(item.cL_thua_BAV_phi,0,3)}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,237 @@
+{
+  "wallet-register": {
+    "title": "Danh sách khách hàng đăng ký ví",
+    "placeholder": {
+      "from-date": "Từ ngày",
+      "to-date": "Đến ngày",
+      "wallet-id": "ID ví",
+      "phone": "Số điện thoại",
+      "name": "Họ tên",
+      "id-card": "Giấy tờ tùy thân",
+      "status": "Tất cả Trạng thái",
+      "wallet-type": "Tất cả Loại ví"
+    },
+    "button": {
+      "search": "Tìm kiếm",
+      "export-excel": "Xuất excel"
+    },
+    "table-header": {
+      "no": "STT",
+      "merchant": "ĐVCNTT",
+      "channel": "Kênh thực hiện",
+      "wallet-type": "Loại ví",
+      "status": "Trạng thái",
+      "created-date": "Ngày tạo",
+      "time": "Thời gian",
+      "balance": "Số dư ví (VND)"
+    },
+    "status-list": {
+      "locked": "Khóa",
+      "active": "Hoạt động",
+      "waiting_approval": "Chờ phê duyệt",
+      "waiting_validate": "Chưa xác thực",
+      "closed": "Đóng"
+    },
+    "wallet-types": {
+      "personal": "Ví cá nhân",
+      "enterprise": "Ví doanh nghiệp"
+    },
+    "errors": {
+      "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị."
+    }
+  },
+  "wallet-register-detail": {
+    "home-town": "Quê quán",
+    "address": "Địa chỉ thường trú",
+    "sex": "Giới tính",
+    "date-of-id": "Ngày cấp",
+    "date-of-birth": "Ngày sinh",
+    "register-time": "Thời gian đăng ký",
+    "issued-by": "Nơi cấp",
+    "nationality": "Quốc tịch",
+    "front-id-image": "Ảnh CMND mặt trước",
+    "back-id-image": "Ảnh CMND mặt sau",
+    "avatar": "Ảnh đại diện",
+    "contact": {
+      "contact-btn": "Liên hệ KH",
+      "send-btn": "Gửi",
+      "popup-title": "Liên hệ khách hàng",
+      "title": "Tiêu đề",
+      "content": "Nội dung",
+      "placeholder": {
+        "title": "Nhập tiêu đề",
+        "content": "Nhập nội dung"
+      },
+      "errors": {
+        "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị."
+      }
+    },
+    "change-status": {
+      "approve": "Phê duyệt",
+      "lock": "Khóa",
+      "unlock": "Mở khóa",
+      "close": "Đóng",
+      "popup-title": "Chuyển trạng thái tài khoản",
+      "text-1": "Bạn có chắc chắn muốn",
+      "text-2": "tài khoản ví này không?",
+      "success": "tài khoản ví thành công",
+      "errors": {
+        "02": "Trạng thái không đúng"
+      }
+    },
+    "errors": {
+      "01": "Không tìm thấy tài khoản"
+    },
+    "payment-config": {
+      "title": "Cấu hình thanh toán",
+      "allow-online-trans": "Cho phép giao dịch trực tuyến",
+      "validate-config": "Cấu hình xác thực",
+      "from-value": "Từ số tiền (VND)",
+      "to-value": "Tới số tiền (VND)",
+      "method": "Phương thức xác thực",
+      "add": "Thêm mới cấu hình thanh toán",
+      "edit": "Cập nhật cấu hình thanh toán",
+      "delete-question": "Bạn chắc chắn muốn xóa cấu hình thanh toán này?",
+      "placeholder": {
+        "from-value": "Nhập số tiền"
+      },
+      "errors": {
+        "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị."
+      }
+    },
+    "limit-config": {
+      "title": "Cấu hình hạn mức",
+      "limit-trans": "Hạn mức GD (VND)",
+      "limit-day": "Hạn mức hàng ngày (VND)",
+      "limit-total": "Tổng hạn mức (VND)",
+      "add": "Thêm mới cấu hình hạn mức",
+      "edit": "Cập nhật cấu hình hạn mức",
+      "delete-question": "Bạn chắc chắn muốn xóa cấu hình hạn mức này?",
+      "placeholder": {
+        "limit-trans": "Nhập hạn mức GD",
+        "limit-day": "Nhập hạn mức hàng ngày",
+        "limit-total": "Nhập tổng hạn mức"
+      },
+      "errors": {
+        "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị."
+      }
+    }
+  },
+  "wallet-link": {
+    "title": "Danh sách khách hàng liên kết/hủy liên kết ví",
+    "placeholder": {
+      "link-type": "Tất cả Loại liên kết",
+      "bank": "Tất cả Ngân hàng",
+      "input-bank": "Nhập tên ngân hàng"
+    },
+    "table-header": {
+      "link-type": "Loại liên kết",
+      "bank": "Ngân hàng",
+      "bank-account": "Số TK/Thẻ"
+    },
+    "link-types": {
+      "1": "Liên kết",
+      "0": "Hủy liên kết"
+    },
+    "status-list": {
+      "error": "Thất bại",
+      "success": "Thành công",
+      "waiting_approval": "Chờ phê duyệt"
+    },
+    "errors": {
+      "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị."
+    }
+  },
+  "wallet-link-detail": {
+    "effective-date": "Ngày hiệu lực",
+    "link-time": "Thời gian liên kết",
+    "link-info": {
+      "title": "Thông tin liên kết",
+      "name": "Họ tên chủ thẻ"
+    },
+    "errors": {
+      "01": "Không tìm thấy tài khoản"
+    }
+  },
+  "wallet-cashin": {
+    "title": "Danh sách giao dịch nạp tiền",
+    "placeholder": {
+      "transaction-id": "Mã GD",
+      "ref-transaction-id": "Mã GD tham chiếu"
+    },
+    "table-header": {
+      "amount": "Số tiền (VND)",
+      "time": "Thời gian GD"
+    },
+    "status-list": {
+      "error": "Thất bại",
+      "success": "Thành công",
+      "waiting_approval": "Chờ xác thực",
+      "time_out": "Timeout"
+    },
+    "errors": {
+      "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị."
+    }
+  },
+  "wallet-cashin-detail": {
+    "errors": {
+      "01": "Không tìm thấy giao dịch"
+    }
+  },
+  "wallet-cashout": {
+    "title": "Danh sách giao dịch rút tiền",
+    "errors": {
+      "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị."
+    }
+  },
+  "wallet-cashout-detail": {
+    "bank": "Ngân hàng nhận tiền",
+    "account": "Số TK nhận tiền"
+  },
+  "wallet-transfer": {
+    "title": "Danh sách giao dịch chuyển tiền",
+    "table-header": {
+      "fee": "Phí (VND)",
+      "total": "Tổng tiền (VND)",
+      "transfer-type": "Loại chuyển tiền",
+      "account-from": "Số TK chuyển",
+      "account-to": "Số TK nhận"
+    },
+    "placeholder": {
+      "wallet-id": "Số TK chuyển/nhận"
+    },
+    "errors": {
+      "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị."
+    }
+  },
+  "wallet-transfer-detail": {
+    "send-person": "Thông tin người chuyển",
+    "receive-person": "Thông tin người nhận"
+  },
+  "wallet-payment": {
+    "title": "Danh sách giao dịch thanh toán",
+    "table-header": {
+      "wallet-account": "Số TK ví"
+    },
+    "errors": {
+      "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị."
+    }
+  },
+  "wallet-payment-detail": {
+    "customer-info": {
+      "title": "Thông tin khách hàng",
+      "customer-id": "Mã khách hàng"
+    },
+    "transaction-info": {
+      "title": "Thông tin giao dịch",
+      "error-code": "Mã lỗi",
+      "error-desc": "Mô tả mã lỗi",
+      "content": "Nội dung"
+    }
+  },
+  "gender": {
+    "Male": "Nam",
+    "Female": "Nữ"
+  },
+  "transfer-transaction-list": "Danh sách giao dịch chuyển tiền điện tử"
+}

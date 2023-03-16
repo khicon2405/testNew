@@ -1,0 +1,406 @@
+<mat-card class="example-card common-management">
+  <mat-card-title class="fs-16 mb-0 row d-flex">
+    <div class="col-md-8">
+      <span class="title page-title">{{
+        "lookup-transaction-payment.details.title" | translate
+      }}</span>
+    </div>
+  </mat-card-title>
+</mat-card>
+
+<!-- ------Kết quả đối soát-----l -->
+<div class="mt-3">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true" class="ct-expansion">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h6 class="m-0">
+            {{ "lookup-transaction-payment.details.result.title" | translate }}
+          </h6>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="ct-expansion-content">
+        <div class="row">
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "lookup-transaction-payment.details.result.order-bav"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-7">{{ dataDetail?.baV_Order_ID }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "lookup-transaction-payment.details.result.dvcntt-code"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-7">{{ dataDetail?.dvcnttCode }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "lookup-transaction-payment.details.result.name-dvtt"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-7">{{ dataDetail?.dvcntt }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "lookup-transaction-payment.details.result.transaction-number"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-7">{{ dataDetail?.transaction_Number }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "lookup-transaction-payment.details.result.transaction-time"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-7">{{ dataDetail?.transDateTime }}</div>
+          </div>
+
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "lookup-transaction-payment.details.result.transaction-status"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-7">{{ dataDetail?.transStatus }}</div>
+          </div>
+
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "lookup-transaction-payment.details.result.amount" | translate
+              }}:
+            </div>
+            <div class="col-md-6">
+              {{ formatMoney(dataDetail?.amount, 0, 3) }}
+            </div>
+          </div>
+
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "lookup-transaction-payment.details.result.promotions"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-7">{{ dataDetail?.lastUpdate }}</div>
+          </div>
+
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "lookup-transaction-payment.details.result.des-trans"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-7">{{ dataDetail?.descriptionTrans }}</div>
+          </div>
+
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "lookup-transaction-payment.details.result.transaction-mb"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-7">{{ dataDetail?.mB_TransactionId }}</div>
+          </div>
+
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "lookup-transaction-payment.details.result.orderid-mb"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-7">{{ dataDetail?.orderIDMB }}</div>
+          </div>
+
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "lookup-transaction-payment.details.result.mb-reponse-code"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-7">{{ dataDetail?.mbResponseCode }}</div>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<!-- -------Thông tin thanh toán ----- -->
+<div class="mt-3">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true" class="ct-expansion">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h6 class="m-0">
+            {{
+              "lookup-transaction-payment.details.transaction-info.title"
+                | translate
+            }}
+          </h6>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="ct-expansion-content">
+        <div class="row mb-3">
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "lookup-transaction-payment.details.transaction-info.customer-name"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-7">{{ dataDetail?.paymentName }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "lookup-transaction-payment.details.transaction-info.account"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-7">{{ dataDetail?.paymentAccount }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "lookup-transaction-payment.details.transaction-info.payment-methods"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-7">{{ dataDetail?.paymentMethods }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "lookup-transaction-payment.details.transaction-info.trans-channels"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-7">{{ dataDetail?.tradingChannel }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "lookup-transaction-payment.details.transaction-info.issuers-code"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-7">{{ dataDetail?.tcphCode }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "lookup-transaction-payment.details.transaction-info.issuers-name"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-7">{{ dataDetail?.issuers }}</div>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<!-- -------lịch sử hoàn tiền -------l -->
+<div class="mt-3">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true" class="ct-expansion">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h6 class="m-0">
+            {{
+              "lookup-transaction-payment.details.refund-history.title"
+                | translate
+            }}
+          </h6>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="ct-expansion-content text-center">
+        <table class="table-responsive table-hover table-transaction">
+          <thead class="table-head">
+            <tr>
+              <th class="table-head-item text-center">
+                {{
+                  "lookup-transaction-payment.details.refund-history.table.no"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "lookup-transaction-payment.details.refund-history.table.refund-ite-code"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "lookup-transaction-payment.details.refund-history.table.refund-bav-code"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "lookup-transaction-payment.details.refund-history.table.refund-mb-code"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "lookup-transaction-payment.details.refund-history.table.refund-amount"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "lookup-transaction-payment.details.refund-history.table.currency-type"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "lookup-transaction-payment.details.refund-history.table.refund-methods"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "lookup-transaction-payment.details.refund-history.table.user-refund"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "lookup-transaction-payment.details.refund-history.table.refund-time"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "lookup-transaction-payment.details.refund-history.table.refund-status"
+                    | translate
+                }}
+              </th>
+            </tr>
+          </thead>
+          <tbody class="table-body" *ngIf="listRefund && listRefund.length">
+            <tr *ngFor="let item of listRefund; let i = index">
+              <td class="td-bold text-center">{{ i + 1 }}</td>
+              <td class="text-center">{{ item.refundCodeITE }}</td>
+              <td class="text-center">{{ item.refundCodeBAV }}</td>
+              <td class="text-center">{{ item.refundCodeMB }}</td>
+              <td class="text-center">
+                {{ formatMoney(item.refundAmount, 0, 3) }}
+              </td>
+              <td class="text-center">{{ item.currencyType }}</td>
+              <td class="text-center">{{ item.refundMethods }}</td>
+              <td class="text-center">{{ item.userCreateTrans }}</td>
+              <td class="text-center">{{ item.processingTime }}</td>
+              <td class="text-center">{{ item.refundStatus }}</td>
+            </tr>
+          </tbody>
+          <tfoot *ngIf="!(listRefund && listRefund.length)">
+            <tr>
+              <td [colSpan]="10">
+                <div class="text-center no-data ng-star-inserted">
+                  <span style="font-weight: normal"
+                    >Chưa có giao dịch hoàn tiền</span
+                  >
+                </div>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<!-- ---------Thông tin phí-------- -->
+<div class="mt-3">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true" class="ct-expansion">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h6 class="m-0">
+            {{
+              "lookup-transaction-payment.details.infor-fee.title" | translate
+            }}
+          </h6>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="ct-expansion-content">
+        <table class="table-responsive table-hover table-fee">
+          <thead class="table-head">
+            <tr>
+              <th class="table-head-item">
+                {{
+                  "lookup-transaction-payment.details.infor-fee.table.type"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "lookup-transaction-payment.details.infor-fee.table.fee-DVCNTT"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "lookup-transaction-payment.details.infor-fee.table.fee-paid-DVCNTT"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "lookup-transaction-payment.details.infor-fee.table.fee-paid-CTV"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "lookup-transaction-payment.details.infor-fee.table.turnover"
+                    | translate
+                }}
+              </th>
+            </tr>
+          </thead>
+          <tbody class="table-body">
+            <tr *ngFor="let item of dataFee.body">
+              <td class="">{{ item.type }}</td>
+              <td class="text-center">{{ item.feeDVCNTT }}</td>
+              <td class="text-center">{{ item.feePaidDVCNTT }}</td>
+              <td class="text-center">{{ item.feePaidCTV }}</td>
+              <td class="text-center">{{ item.turnover }}</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr *ngFor="let item of dataFee.footer">
+              <td class="td-bold">{{ item.name }}</td>
+              <td class="text-center">{{ item.feeDVCNTT }}</td>
+              <td class="text-center">{{ item.feePaidDVCNTT }}</td>
+              <td class="text-center">{{ item.feePaidCTV }}</td>
+              <td class="text-center">{{ item.turnover }}</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

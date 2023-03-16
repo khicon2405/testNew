@@ -1,0 +1,237 @@
+{
+  "wallet-register": {
+    "title": "List of registered wallet customers",
+    "placeholder": {
+      "from-date": "From date",
+      "to-date": "To date",
+      "wallet-id": "wallet ID",
+      "phone": "Phone number",
+      "name": "Full name",
+      "id-card": "ID card",
+      "status": "All Status",
+      "wallet-type": "All Wallets"
+    },
+    "button": {
+      "search": "Search",
+      "export-excel": "Excel export"
+    },
+    "table-header": {
+      "no": "STT",
+      "merchant": "ICT",
+      "channel": "Execution channel",
+      "wallet-type": "wallet-type",
+      "status": "Status",
+      "created-date": "created date",
+      "time": "Time",
+      "balance": "Wallet balance (VND)"
+    },
+    "status-list": {
+      "locked": "Locked",
+      "active": "Active",
+      "waiting_approval": "Waiting for approval",
+      "waiting_validate": "Not validating",
+      "closed": "Close"
+    },
+    "wallet-types": {
+      "personal": "Personal wallet",
+      "enterprise": "Enterprise Wallet"
+    },
+    "errors": {
+      "99": "System Error"
+    }
+  },
+  "wallet-register-detail": {
+    "home-town": "Hometown",
+    "address": "Residence address",
+    "sex": "Gender",
+    "date-of-id": "issue date",
+    "date-of-birth": "Date of birth",
+    "register-time": "Registration time",
+    "issued-by": "issued place",
+    "nationality": "Nationality",
+    "front-id-image": "front face ID photo",
+    "back-id-image": "Backside ID photo",
+    "avatar": "Avatar",
+    "contact": {
+      "contact-btn": "Contact Customer",
+      "send-btn": "Send",
+      "popup-title": "Customer Contact",
+      "title": "Title",
+      "content": "Content",
+      "placeholder": {
+        "title": "Enter title",
+        "content": "Enter content"
+      },
+      "errors": {
+        "99": "System Error"
+      }
+    },
+    "change-status": {
+      "approve": "Approve",
+      "lock": "Lock",
+      "unlock": "Unlock",
+      "close": "Close",
+      "popup-title": "Switch account status",
+      "text-1": "Are you sure you want",
+      "text-2": "wallet account?",
+      "success": "successful wallet account",
+      "errors": {
+        "02": "Invalid status"
+      }
+    },
+    "errors": {
+      "01": "Id does not exist"
+    },
+    "payment-config": {
+      "title": "Billing Configuration",
+      "allow-online-trans": "Allow online transactions",
+      "validate-config": "Authentication Configuration",
+      "from-value": "From amount (VND)",
+      "to-value": "To the amount (VND)",
+      "method": "Authentication method",
+      "add": "Add new payment configuration",
+      "edit": "Update billing configuration",
+      "delete-question": "Are you sure you want to delete this payment configuration?",
+      "placeholder": {
+        "from-value": "Enter amount"
+      },
+      "errors": {
+        "99": "System Error"
+      }
+    },
+    "limit-config": {
+      "title": "Configure limit",
+      "limit-trans": "GD limit (VND)",
+      "limit-day": "Daily limit (VND)",
+      "limit-total": "Total limit (VND)",
+      "add": "Add new limit configuration",
+      "edit": "Update limit configuration",
+      "delete-question": "Are you sure you want to delete this quota configuration?",
+      "placeholder": {
+        "limit-trans": "Enter GD limit",
+        "limit-day": "Enter daily limit",
+        "limit-total": "Enter total limit"
+      },
+      "errors": {
+        "99": "System Error"
+      }
+    }
+  },
+  "wallet-link": {
+    "title": "List of customers to link/unlink wallets",
+    "placeholder": {
+      "link-type": "All Link Types",
+      "bank": "All Banks",
+      "input-bank": "Enter bank name"
+    },
+    "table-header": {
+      "link-type": "Link-Type",
+      "bank": "Bank",
+      "bank-account": "Account/Card Number"
+    },
+    "link-types": {
+      "1": "Link",
+      "0": "Unlink"
+    },
+    "status-list": {
+      "error": "Failure",
+      "success": "Success",
+      "waiting_approval": "Waiting for approval"
+    },
+    "errors": {
+      "99": "System Error"
+    }
+  },
+  "wallet-link-detail": {
+    "effective-date": "Effective date",
+    "link-time": "Link Time",
+    "link-info": {
+      "title": "Link Info",
+      "name": "Name of cardholder"
+    },
+    "errors": {
+      "01": "Id does not exist"
+    }
+  },
+  "wallet-cashin": {
+    "title": "Top-up transaction list",
+    "placeholder": {
+      "transaction-id": "GD code",
+      "ref-transaction-id": "Reference GD code"
+    },
+    "table-header": {
+      "amount": "Amount (VND)",
+      "time": "GD time"
+    },
+    "status-list": {
+      "error": "Failure",
+      "success": "Success",
+      "waiting_approval": "Waiting for approval",
+      "time_out": "Timeout"
+    },
+    "errors": {
+      "99": "System Error"
+    }
+  },
+  "wallet-cashin-detail": {
+    "errors": {
+      "01": "Id does not exist"
+    }
+  },
+  "wallet-cashout": {
+    "title": "List of withdrawal transactions",
+    "errors": {
+      "99": "System Error"
+    }
+  },
+  "wallet-cashout-detail": {
+    "bank": "Receiving bank",
+    "account": "Account number to receive money"
+  },
+  "wallet-transfer": {
+    "title": "List of Remittance Transactions",
+    "table-header": {
+      "fee": "Fee (VND)",
+      "total": "Total amount (VND)",
+      "transfer-type": "Transfer type",
+      "account-from": "Transfer account number",
+      "account-to": "receiving account number"
+    },
+    "placeholder": {
+      "wallet-id": "Transfer/receive account number"
+    },
+    "errors": {
+      "99": "System Error"
+    }
+  },
+  "wallet-transfer-detail": {
+    "send-person": "Sender information",
+    "receive-person": "Recipient information"
+  },
+  "wallet-payment": {
+    "title": "List of payment transactions",
+    "table-header": {
+      "wallet-account": "wallet account number"
+    },
+    "errors": {
+      "99": "System Error"
+    }
+  },
+  "wallet-payment-detail": {
+    "customer-info": {
+      "title": "Customer Information",
+      "customer-id": "Customer ID"
+    },
+    "transaction-info": {
+      "title": "Transaction Information",
+      "error-code": "Error Code",
+      "error-desc": "Describe the error code",
+      "content": "Content"
+    }
+  },
+  "gender": {
+    "Male": "Male",
+    "Female": "Female"
+  },
+  "transfer-transaction-list": "List of electronic money transfers"
+}

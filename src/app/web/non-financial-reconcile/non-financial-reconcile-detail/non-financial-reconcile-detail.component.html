@@ -1,0 +1,525 @@
+<mat-card class="example-card common-management">
+  <mat-card-title class="fs-16 mb-0 row d-flex">
+    <div class="col-md-8">
+      <span class="title page-title">{{
+        "reconcile-non-financial.details.title" | translate
+      }}</span>
+    </div>
+  </mat-card-title>
+</mat-card>
+
+<!-- ------Kết quả đối soát-----l -->
+<div class="mt-3">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true" class="ct-expansion">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h6 class="m-0">
+            {{ "reconcile-non-financial.details.result.title" | translate }}
+          </h6>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="ct-expansion-content">
+        <div class="row">
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{ "reconcile-non-financial.details.result.code" | translate }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.resultCode }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-non-financial.details.result.description"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.descriptionResults }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-non-financial.details.result.time-update"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.lastUpdate }}</div>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<!-- -------Thông tin thanh toán ----- -->
+<div class="mt-3">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true" class="ct-expansion">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h6 class="m-0">
+            {{
+              "reconcile-non-financial.details.infor-client.title" | translate
+            }}
+          </h6>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="ct-expansion-content">
+        <div class="row mb-3">
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-non-financial.details.infor-client.type-transaction"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.transType }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-non-financial.details.infor-client.channel-transaction"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.tradingChannel }}</div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-non-financial.details.infor-client.code-client"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.merchantCode }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-non-financial.details.infor-client.full-name"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.paymentName }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-non-financial.details.infor-client.phone-number"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.phoneNumber }}</div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-non-financial.details.infor-client.date-of-birth"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.dateOfBirth }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-non-financial.details.infor-client.gender"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.gender }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-non-financial.details.infor-client.email"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.merchantEmail }}</div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-non-financial.details.infor-client.type-GTTT"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.customerIdCardType }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-non-financial.details.infor-client.no-GTTT"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.customerIdCard }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-non-financial.details.infor-client.date-GTTT"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.dateOfIDCard }}</div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-12 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-non-financial.details.infor-client.add-GTTT"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-9">{{ dataDetail?.placeOfIssue }}</div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-non-financial.details.infor-client.created-date"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.registerDate }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-non-financial.details.infor-client.type-account"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.accountType }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-non-financial.details.infor-client.status-account"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.accountStatus }}</div>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<!-- -------Thông tin giao dịch gốc -------l -->
+<div class="mt-3">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true" class="ct-expansion">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h6 class="m-0">
+            {{
+              "reconcile-non-financial.details.infor-original-transaction.title" | translate
+            }}
+          </h6>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="ct-expansion-content text-center">
+        <table class="table-responsive table-hover table-transaction">
+          <thead class="table-head">
+            <tr>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-original-transaction.table.system"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-original-transaction.table.code"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-original-transaction.table.transaction-time"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-original-transaction.table.name-client"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-original-transaction.table.no-id"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-original-transaction.table.phone-number"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-original-transaction.table.code-wallet"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-original-transaction.table.no-account"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item  text-center">
+                {{
+                  "reconcile-non-financial.details.infor-original-transaction.table.processing-time"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item  text-center">
+                {{
+                  "reconcile-non-financial.details.infor-original-transaction.table.status"
+                    | translate
+                }}
+              </th>
+            </tr>
+          </thead>
+          <tbody class="table-body">
+            <tr *ngFor="let item of dataOriginal">
+              <td class="td-bold  text-center">{{ item.system }}</td>
+              <td class=" text-center">{{ item.transactionCode }}</td>
+              <td class=" text-center">{{ item.transDateTime }}</td>
+              <td class=" text-center">{{ item.name }}</td>
+              <td class=" text-center">{{ item.customerIdCard }}</td>
+              <td class=" text-center">{{ item.phoneNumber }}</td>
+              <td class=" text-center">{{ item.walletId }}</td>
+              <td class=" text-center">{{ item.accountNumber }}</td>
+
+              <td class="">{{ item.processingDateTime }}</td>
+              <td class="">{{ item.status }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<!-- -------Thông tin liên kết -------l -->
+<div class="mt-3">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true" class="ct-expansion">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h6 class="m-0">
+            {{
+              "reconcile-non-financial.details.infor-linked.title" | translate
+            }}
+          </h6>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="ct-expansion-content">
+        <table class="table-responsive table-hover table-link">
+          <thead class="table-head">
+            <tr>
+              <td
+                class="text-center"
+                colSpan=5
+                style="background-color: #95c6ed;"
+              >
+                {{
+                  "reconcile-non-financial.details.infor-linked.table.infor-card"
+                    | translate
+                }}
+              </td>
+              <td
+                class="text-center"
+                colspan=7
+                style="background-color: #fbc25a;"
+              >
+                {{
+                  "reconcile-non-financial.details.infor-linked.table.history-card"
+                    | translate
+                }}
+              </td>
+            </tr>
+
+            <tr>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-linked.table.bank-id"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-linked.table.no-account"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-linked.table.name-account"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-linked.table.status-linked"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-linked.table.updated-date-link"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-linked.table.type-transaction"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-linked.table.code-transaction-CTT"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-linked.table.code-transaction-MB"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-linked.table.status-transaction-link"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-linked.table.processing-link-time"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item  text-center">
+                {{
+                  "reconcile-non-financial.details.infor-linked.table.napas-id"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item  text-center">
+                {{
+                  "reconcile-non-financial.details.infor-linked.table.money-link"
+                    | translate
+                }}
+              </th>
+            </tr>
+          </thead>
+          <tbody class="table-body">
+            <tr *ngFor="let item of listInfoLinkCard">
+              <td class="text-center td-no">{{ item.bankID }}</td>
+              <td class="text-center">{{ item.accountNumber }}</td>
+              <td class="text-center">{{ item.sourceUserName }}</td>
+              <td class="text-center">{{ item.linkStatus }}</td>
+              <td class="text-center">{{ item.timeUpdateLinkStatus }}</td>
+              <td class="text-center">{{ item.transType }}</td>
+              <td class="text-center">{{ item.itE_TransactionId }}</td>
+              <td class="text-center">{{ item.mB_TransactionId }}</td>
+              <td class="text-center">{{ item.transStatus }}</td>
+              <td class="text-center">{{ item.transDateTime }}</td>
+              <td class="text-center">{{ item.napasTransId }}</td>
+              <td class="text-center">{{ item.amount }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<!-- ---------Thông tin phí-------- -->
+<div class="mt-3">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true" class="ct-expansion">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h6 class="m-0">
+            {{ "reconcile-non-financial.details.infor-fee.title" | translate }}
+          </h6>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="ct-expansion-content">
+        <table class="table-responsive table-hover table-fee">
+          <thead class="table-head">
+            <tr>
+              <th class="table-head-item ">
+                {{
+                  "reconcile-non-financial.details.infor-fee.table.type"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-fee.table.fee-DVCNTT"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-fee.table.fee-paid-DVCNTT"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-fee.table.fee-paid-CTV"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-fee.table.turnover"
+                    | translate
+                }}
+              </th>
+            </tr>
+          </thead>
+          <tbody class="table-body">
+            <tr *ngFor="let item of dataFee.body">
+              <td class="">{{ item.type }}</td>
+              <td class="text-center">{{ item.feeDVCNTT }}</td>
+              <td class="text-center">{{ item.feePaidDVCNTT }}</td>
+              <td class="text-center">{{ item.feePaidCTV }}</td>
+              <td class="text-center">{{ item.turnover }}</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr *ngFor="let item of dataFee.footer">
+              <td class="td-bold">{{ item.name }}</td>
+              <td class="text-center">{{ item.feeDVCNTT }}</td>
+              <td class="text-center">{{ item.feePaidDVCNTT }}</td>
+              <td class="text-center">{{ item.feePaidCTV }}</td>
+              <td class="text-center">{{ item.turnover }}</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

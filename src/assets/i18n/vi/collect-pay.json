@@ -1,0 +1,69 @@
+{
+    "collect-pay": {
+        "title": "Danh sách giao dịch thu hộ - chi hộ",
+        "trans-type": "Tất cả loại GD",
+        "trans-type-list": {
+            "collect_on_behalf": "Thu hộ",
+            "pay_on_behalf": "Chi hộ"
+        },
+        "table-header": {
+            "contract-no": "Mã HĐ",
+            "trans-type": "Loại GD",
+            "time": "Ngày GD"
+        },
+        "detail": {
+            "service": "Dịch vụ",
+            "supplier": "Nhà cung cấp"
+        },
+        "add": "Tạo GD chi hộ",
+        "customer-account": "Số tài khoản KH",
+        "bill": "Mã hóa đơn",
+        "check": "Kiểm tra",
+        "total": "Tổng tiền thanh toán (VND)",
+        "payment": "Thanh toán",
+        "placeholder": {
+            "account": "Nhập số tài khoản KH",
+            "bill": "Nhập mã hóa đơn"
+        },
+        "confirm": "Xác nhận thanh toán",
+        "confirm-btn": "Xác nhận",
+        "left-menu": {
+            "list": "Danh sách GD",
+            "pay": "Chi hộ"
+        },
+        "errors": {
+            "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị."
+        },
+        "check-customer-errors": {
+            "01": "Không tìm thấy tài khoản",
+            "02": "Trạng thái tài khoản không đúng"
+        },
+        "check-order-errors": {
+            "01": "Không tìm thấy tài khoản",
+            "02": "Trạng thái tài khoản không đúng",
+            "04": "Vui lòng chọn dịch vụ và nhà cung cấp"
+        },
+        "add-errors": {
+            "01": "Đơn hàng không tồn tại hoặc đã thanh toán",
+            "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị."
+        },
+        "add-success": "Tạo GD chi hộ thành công",
+        "detail-errors": {
+            "01": "Không tìm thấy giao dịch"
+        },
+        "partner-info-report": {
+            "type-list": {
+                "bank": "Ngân hàng hợp tác",
+                "merchant": "Đơn vị chấp nhận thanh toán"
+            },
+            "errors": {
+                "99":"Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị."
+            }
+        },
+        "transaction-info-report": {
+            "errors": {
+                "99":"Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị."
+            }
+        }
+    }
+}

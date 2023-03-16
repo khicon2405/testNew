@@ -1,0 +1,51 @@
+{
+    "paygate-transaction": {
+        "title": "Payment gateway transaction list",
+        "trans-no": "GD code",
+        "merchant": "All IITs",
+        "status": "All GD status",
+        "table-header": {
+            "time": "GD time",
+            "merchant": "ICT",
+            "value": "Amount (VND)",
+            "order-no": "Order code",
+            "payment-method": "TT method",
+            "account": "TT account",
+            "status": "GD Status",
+            "action": "Action"
+        },
+        "detail": {
+            "discount": "Promotion",
+            "paygate-error": "CTT error code",
+            "issuer-error": "TCH error code",
+            "token-error": "Token error code"
+        },
+        "customer-info": {
+            "title": "Customer Information",
+            "name": "Customer name",
+            "account": "TT card/account number",
+            "issuer": "Issuer",
+            "channel": "Trading channel"
+        },
+        "merchant-info": {
+            "title": "Information on IT",
+            "name": "Name of IIT",
+            "phone": "Phone number",
+            "address": "Address"
+        },
+        "status-list": {
+            "success": "Success",
+            "error": "Error",
+            "waiting_approval": "Waiting for approval",
+            "waiting_verify": "Not authenticated"
+        },
+        "payment-method": {
+            "wallet": "E-wallet",
+            "card": "Internal card"
+        },
+        "top": {
+            "title": "Top IITs with the most transaction volume/value in the reporting period",
+            "career": "Line of business"
+        }
+    }
+}

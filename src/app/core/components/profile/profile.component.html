@@ -1,0 +1,92 @@
+<mat-card class="mb-3">
+  <mat-card-content>
+    <div class="profile-management">
+      <div class="row ml-0 mr-0">
+        <div class="col-12 col-md-8 col-lg-10 pl-0">
+          <div class="row ml-0">
+            <div class="avatar-container" (click)="openChangeImg()">
+              <img class="avatar" [src]="profileImage" alt="user" default="{{ defaultAvatar }}" />
+              <i class="fa fa-2x fa-camera img-upload" aria-hidden="true"></i>
+            </div>
+            <div class="profile-detail d-flex flex-column">
+              <div class="fullname">{{ profile?.fullname }}</div>
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th class="col-title">
+                      {{ 'profileAccount.username'| translate }}:
+                    </th>
+                    <td class="col-info">
+                      {{ profile?.username }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="col-title">
+                      {{ 'profileAccount.email'| translate }}:
+                    </th>
+                    <td class="col-info">
+                      {{ profile?.email }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="col-title">
+                      {{ 'profileAccount.phone'| translate }}:
+                    </th>
+                    <td class="col-info">
+                      {{ profile?.phone }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="col-title">
+                      {{ 'profileAccount.createdDate'| translate }}:
+                    </th>
+                    <td class="col-info">
+                      {{ profile?.created_date}}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4  col-lg-2 pl-0 pr-0 edit-profile">
+          <button mat-raised-button class="btn-edit pl-2 pr-3" (click)="editProfile()">
+            <i class="material-icons">edit</i>
+            <span class="hide-text">&nbsp;{{ 'profileAccount.edit' | translate }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="mb-3">
+  <div class="language-container pr-0">
+    <mat-card-title class="d-flex justify-content-between">
+      {{ 'language' | translate }}
+    </mat-card-title>
+    <mat-card-content class="">
+      <div>{{ 'profileAccount.defaultLanguage' | translate }}</div>
+      <div class="language" *ngIf="language?.desc">{{ 'languageList.' + language?.desc | translate }}</div>
+    </mat-card-content>
+  </div>
+</mat-card>
+
+<mat-card class="mb-3">
+  <div class="history-container">
+    <mat-card-title>
+      {{ 'profileAccount.history' | translate }}
+    </mat-card-title>
+    <mat-card-content class="content">
+      <div *ngFor="let item of history; let odd = odd; let even = even;" class="history">
+        <div class="dot" [ngClass]="{ 'bg-odd': odd, 'bg-even': even }"></div>
+        <div class="history-content">
+          <div class="action-time" [ngClass]="{ 'bg-odd': odd, 'bg-even': even }">
+            {{ item?.action_time }}</div>
+          <div class="action-name">{{ item?.action_name }}</div>
+        </div>
+      </div>
+      <div class="see-more" *ngIf="isSeeMore" (click)="seeMore()">{{ 'profileAccount.seeMore' | translate }}</div>
+    </mat-card-content>
+  </div>
+</mat-card>

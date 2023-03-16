@@ -1,0 +1,15 @@
+{
+  "batch-file-manager": {
+    "title": "Quản lý Batch File",
+    "reconcile-date": "Reconcile Date",
+    "data-column": {
+      "number": "No",
+      "reconcile-date": "Reconcile Date",
+      "partner-name": "Partner's name",
+      "file-location": "File location",
+      "received-time": "Receive time",
+      "batch-file-name": "Batch file name",
+      "action": "Action"
+    }
+  }
+}

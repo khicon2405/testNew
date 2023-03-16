@@ -1,0 +1,83 @@
+{
+  "error_code": {
+    "login": {
+      "error_01": "Invalid username or password.",
+      "error_02": "Account is locked.",
+      "error_99": "The system is temporarily down. Please contact the administrator.",
+      "error_88": "The requested information is invalid.",
+      "error_03": "Email or phone number does not exist.",
+      "error_04": "The system does not support sending OTP codes via SMS. Please try again with email.",
+      "error_05": "Authenticate transaction does not exist or has expired.",
+      "error_06": "The OTP is incorrect.",
+      "error_07": "User does not exist or is locked.",
+      "error_11": "The number of OTPs allowed has been exceeded."
+    },
+    "forgot": {
+      "sussess_00": "The new password has been updated.",
+      "error_11": "The allowed number of OTP submissions has been exceeded.",
+      "error_02": "Account is locked.",
+      "error_99": "The system is temporarily down. Please contact the administrator.",
+      "error_88": "The requested information is invalid.",
+      "error_03": "Email does not exist.",
+      "error_04": "The system does not support sending OTP codes via SMS. Please try again with email.",
+      "error_05": "The OTP is invalid due to overdue or incorrect input more than 3 times. Please click Resend OTP.",
+      "error_06": "The OTP is incorrect.",
+      "error_07": "The user does not exist or is locked."
+    },
+    "changepassword": {
+      "sussess_00": "The new password has been updated.",
+      "error_06": "Your old password is incorrect.",
+      "error_-1": "You should return to the login page and press the Forgot Password button to operate.",
+      "error_99": "The system is temporarily down. Please contact the administrator.",
+      "error_88": "The requested information is invalid.",
+      "format": {
+        "lowercase": "lowercase",
+        "uppercase": "uppercase",
+        "min": "8 characters",
+        "special": "Special character",
+        "number": "Number",
+        "utf8": "Valid character"
+      }
+    },
+    "submerchant": {
+      "error_08": "Acceptor name already exists. Please enter another name.",
+      "new_00": "New creation successful.",
+      "edit_00": "The information {{ nameSubMerchant }} has been updated.",
+      "active_00": "Activation successful",
+      "error_09": "Incorrect management unit information.",
+      "error_10": "The agent email already exists.",
+      "error_05": "Incorrect payment method information.",
+      "error_04": "No acceptor found.",
+      "error_11": "The acceptor status has not been activated.",
+      "error_01": "Date format is incorrect.",
+      "error_02": "No matching data found.",
+      "error_99": "The system is temporarily down. Please contact the administrator.",
+      "error_22": "Incorrect administrative unit information.",
+      "error_88": "The requested information is invalid.",
+      "deactive": "The unit has been temporarily locked."
+    },
+    "risks": {
+      "account_format": "Invalid account/wallet number",
+      "account_length": "Account/wallet number with at least 4 characters",
+      "bank_number_length": "The number of cards has at least 16 characters",
+      "bank_number_format": "Invalid bank card number"
+    },
+    "qr_code": {
+      "new_00": "New creation successful.",
+      "edit_00": "The QR code information has been updated.",
+      "delete_00": "Delete QR information successfully.",
+      "error_01": "Invalid IT information.",
+      "error_02": "Incorrect QR type.",
+      "error_03": "An existing QR code for product {{ productCode }}.",
+      "error_04": "Expended at this IIT QR code.",
+      "error_05": "A QR code already exists for employee {{ staffCode }}.",
+      "error_06": "QR Code ID already exists",
+      "error_08": "The status is incorrect",
+      "error_09": "QR Code does not exist",
+      "error_10": "Date information is incorrect",
+      "error_88": "The requested information is invalid.",
+      "error_99": "The system is temporarily down. Please contact the administrator.",
+      "empty-sub-merchant": "All IITs have QR codes. Please check again!"
+    }
+  }
+}

@@ -1,0 +1,338 @@
+<mat-card class="example-card common-management">
+  <mat-card-title class="fs-16 mb-0 row d-flex">
+    <div class="col-md-8">
+      <span class="title page-title">{{
+        "reconcile-wallet-financial.details.title" | translate
+      }}</span>
+    </div>
+  </mat-card-title>
+</mat-card>
+
+<!-- ------Kết quả đối soát-----l -->
+<div class="mt-3">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true" class="ct-expansion">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h6 class="m-0">
+            {{ "reconcile-wallet-financial.details.result.title" | translate }}
+          </h6>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="ct-expansion-content">
+        <div class="row">
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-wallet-financial.details.result.code" | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.resultCode }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-wallet-financial.details.result.description"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.descriptionResults }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-wallet-financial.details.result.time-update"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.lastUpdate }}</div>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<!-- -------Thông tin thanh toán ----- -->
+<div class="mt-3">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true" class="ct-expansion">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h6 class="m-0">
+            {{
+              "reconcile-wallet-financial.details.general-infor.title"
+                | translate
+            }}
+          </h6>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="ct-expansion-content">
+        <div class="row mb-3">
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-wallet-financial.details.general-infor.type-transaction"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.transType }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-wallet-financial.details.general-infor.channel-transaction"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.tradingChannel }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-wallet-financial.details.general-infor.method-transaction"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.paymentMethods }}</div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-wallet-financial.details.general-infor.start-card"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.sourceAccount }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-wallet-financial.details.general-infor.account-name"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.sourceUserName }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-wallet-financial.details.general-infor.bank-id"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.sourceBankId }}</div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-wallet-financial.details.general-infor.end-card"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.targetAccount }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-wallet-financial.details.general-infor.account-name"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.targetUserName }}</div>
+          </div>
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-wallet-financial.details.general-infor.bank-id"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.targetBankId }}</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4 row">
+            <div class="ml-3 mr-2 text-secondary">
+              {{
+                "reconcile-wallet-financial.details.general-infor.response-code-mb"
+                  | translate
+              }}:
+            </div>
+            <div class="col-md-6">{{ dataDetail?.responseMBCode }}</div>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<!-- -------Thông tin giao dịch gốc -------l -->
+<div class="mt-3">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true" class="ct-expansion">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h6 class="m-0">
+            {{
+              "reconcile-wallet-financial.details.infor-original-transaction.title"
+                | translate
+            }}
+          </h6>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="ct-expansion-content">
+        <table class="table-responsive table-hover table-transaction">
+          <thead class="table-head">
+            <tr>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-wallet-financial.details.infor-original-transaction.table.system"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-wallet-financial.details.infor-original-transaction.table.code"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-wallet-financial.details.infor-original-transaction.table.transaction-time"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-wallet-financial.details.infor-original-transaction.table.money"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-wallet-financial.details.infor-original-transaction.table.currency"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-wallet-financial.details.infor-original-transaction.table.start-account"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-wallet-financial.details.infor-original-transaction.table.end-account"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-wallet-financial.details.infor-original-transaction.table.processing-time"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-wallet-financial.details.infor-original-transaction.table.status"
+                    | translate
+                }}
+              </th>
+            </tr>
+          </thead>
+          <tbody class="table-body">
+            <tr *ngFor="let item of dataOriginal">
+              <td class="td-bold text-center">{{ item.system }}</td>
+              <td class="text-center">{{ item.transaction }}</td>
+              <td class="text-center">{{ item.transDateTime }}</td>
+              <td class="text-center">{{ item.amount }}</td>
+              <td class="text-center">{{ item.currencyType }}</td>
+              <td class="text-center">{{ item.sourceAccount }}</td>
+              <td class="text-center">{{ item.targetAccount }}</td>
+              <td class="text-center">{{ item.processingDateTime }}</td>
+              <td class="text-center">{{ item.status }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+<!-- ---------Thông tin phí-------- -->
+<div class="mt-3">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true" class="ct-expansion">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h6 class="m-0">
+            {{
+              "reconcile-wallet-financial.details.infor-fee.title" | translate
+            }}
+          </h6>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="ct-expansion-content">
+        <table class="table-responsive table-hover table-fee">
+          <thead class="table-head">
+            <tr>
+              <th class="table-head-item ">
+                {{
+                  "reconcile-non-financial.details.infor-fee.table.type"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-fee.table.fee-DVCNTT"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-fee.table.fee-paid-DVCNTT"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-fee.table.fee-paid-CTV"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item text-center">
+                {{
+                  "reconcile-non-financial.details.infor-fee.table.turnover"
+                    | translate
+                }}
+              </th>
+            </tr>
+          </thead>
+          <tbody class="table-body">
+            <tr *ngFor="let item of dataFee.body">
+              <td class="">{{ item.type }}</td>
+              <td class="text-center">{{ item.feeDVCNTT }}</td>
+              <td class="text-center">{{ item.feePaidDVCNTT }}</td>
+              <td class="text-center">{{ item.feePaidCTV }}</td>
+              <td class="text-center">{{ item.turnover }}</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr *ngFor="let item of dataFee.footer">
+              <td class="td-bold">{{ item.name }}</td>
+              <td class="text-center">{{ item.feeDVCNTT }}</td>
+              <td class="text-center">{{ item.feePaidDVCNTT }}</td>
+              <td class="text-center">{{ item.feePaidCTV }}</td>
+              <td class="text-center">{{ item.turnover }}</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

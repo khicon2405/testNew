@@ -1,0 +1,20 @@
+{
+  "batch-file-manager": {
+    "title": "Quản lý Batch File",
+    "placeholder": {
+      "to-date": "Đến ngày",
+      "from-date": "Từ ngày",
+      "input-text": "Nhập thông tin tìm kiếm bằng tên ĐVCNT, Tên Tổ chức phát hành"
+    }
+    ,
+    "data-column": {
+      "number": "STT",
+      "reconcile-date": "Ngày đối soát",
+      "partner-name": "Tên đối tác",
+      "file-location": "Thư mực chứa file",
+      "received-time": "Thời gian nhận file",
+      "batch-file-name": "Tên Batch File",
+      "action": "Thao tác"
+    }
+  }
+}

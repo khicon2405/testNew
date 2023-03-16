@@ -1,0 +1,37 @@
+{
+    "risk-transaction": {
+        "title": "Suspicious transaction list",
+        "trans-day": "Transaction date",
+        "bank": "All banks",
+        "trans-type": "Transaction type",
+        "account-info": {
+            "title": "Account Information",
+            "card-no": "Card number",
+            "owner": "Cardholder",
+            "wallet-no": "wallet account number",
+            "expired-date": "Expiration date"
+        },
+        "errors": {
+            "99": "The system is temporarily down. Please contact the administrator."
+        },
+        "trans-type-list": {
+            "deposit": "Deposit",
+            "withdraw": "Withdraw",
+            "transfer": "Transfer electronic money",
+            "payment": "Thanh toán"
+        }
+    },
+    "risk-transaction-detail": {
+        "errors": {
+            "01": "No transaction found"
+        }
+    },
+    "block-transaction": {
+        "title": "List of blocked transactions"
+    },
+    "block-transaction-detail": {
+        "errors": {
+            "01": "No transaction found"
+        }
+    }
+}

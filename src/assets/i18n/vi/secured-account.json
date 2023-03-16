@@ -1,0 +1,41 @@
+{
+    "secured-account": {
+        "title": "Danh sách tài khoản đảm bảo thanh toán",
+        "settlement-date": "Ngày quyết toán",
+        "account-name": "Tên tài khoản",
+        "account-no": "Số tài khoản đảm bảo",
+        "total-wallet": "Tổng số ví",
+        "total-value-wallet": "Tổng số dư ví (VND)",
+        "total-value-bank": "Tổng số dư TKĐB tại NH (VND)",
+        "settlement-button": "Quyết toán",
+        "settlement-dialog": "Quyết toán tài khoản đảm bảo thanh toán",
+        "settlement-success": "Quyết toán tài khoản đảm bảo thanh toán thành công",
+        "placeholder": {
+            "value": "Nhập số dư TKĐB tại ngân hàng"
+        },
+        "errors": {
+            "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị."
+        },
+        "settlement-errors": {
+            "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị.",
+            "04": "Dữ liệu yêu cầu không hợp lệ",
+            "03": "Tổng số dư TKĐB tại NH phải lớn hơn tổng số dư ví"
+        }
+    },
+    "revenue-expenditure": {
+        "title": "Danh sách tài khoản đảm bảo thu hộ - chi hộ",
+        "type": "Loại",
+        "total-value": "Tổng thu hộ/chi hộ (VND)",
+        "settlement-success": "Quyết toán tài khoản đảm bảo thu hộ - chi hộ thành công",
+        "errors": {
+            "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị."
+        },
+        "settlement-errors": {
+            "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị.",
+            "04": "Dữ liệu yêu cầu không hợp lệ",
+            "03": "Tổng số dư TKĐB tại NH phải lớn hơn tổng số dư ví"
+        },
+        "payment": "Chi hộ",
+        "collection": "Thu hộ"
+    }
+}

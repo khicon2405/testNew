@@ -1,0 +1,297 @@
+{
+  "risks-management": {
+    "title-main": "Risk management",
+    "success": "Succeed",
+    "dialog": {
+      "placeholder": {
+        "file": "Select the file to upload",
+        "ip": "Enter the IP address",
+        "bin": "Enter the BIN card range",
+        "business": "Corresponding Service name",
+        "account": "Enter account number/e-wallet number",
+        "card": "Enter the bank card number",
+        "date": "Enter/select the effective date",
+        "sl": "Enter the corresponding number",
+        "price": "Enter the corresponding value",
+        "issuer": "Select the issuer",
+        "method": "Select form handling",
+        "upload": "Select the file to upload",
+        "search": "Enter search information",
+        "nation": "Enter nation name"
+      }
+    },
+    "button": {
+      "add": "Add new",
+      "export": "Export",
+      "close": "Close",
+      "search": "Search",
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "card": {
+      "title": "Search restricted cards",
+      "title_add": "Add new restricted MCC",
+      "title_edit": "Edit restricted card",
+      "title_delete": "Delete the restricted card",
+      "file_name": "List of the restricted card",
+      "search": {
+        "number": "Card number",
+        "dv": "Issuer",
+        "date": "Effective date",
+        "action": "Processed method",
+        "name_list": "Card list"
+      },
+      "list": {
+        "no": "No.",
+        "number": "Card number",
+        "dv": "Issuer",
+        "date": "Effective date",
+        "action": "Processed method",
+        "menu": "Action",
+        "account": "Creator's account"
+      }
+    },
+    "account": {
+      "title": "Search restricted account / e-wallet",
+      "title_add": "Add a new restricted account/e-wallet",
+      "title_edit": "Edit restricted account/e-wallet",
+      "title_delete": "Delete restricted account/e-wallet",
+      "file_name": "List of the restricted accounts",
+      "search": {
+        "number": "Account/wallet number",
+        "dv": "Issuer",
+        "date": "Effective date",
+        "action": "Action",
+        "name_list": "Accounts/wallets list"
+      },
+      "list": {
+        "no": "No.",
+        "number": "Account/wallet number",
+        "dv": "Issuer",
+        "date": "Effective date",
+        "action": "Process method",
+        "menu": "Action",
+        "account": "Creator's account"
+      }
+    },
+    "bin": {
+      "title": "Search restricted BIN card ribbon",
+      "title_add": "Add new restricted BIN card ribbon",
+      "title_edit": "Restricted BIN card ribbon",
+      "title_delete": "Delete restricted BIN card ribbon",
+      "file_name": "List of the restricted BIN card",
+      "search": {
+        "number": "BIN card ribbon",
+        "dv": "Issuer",
+        "date": "Effective date",
+        "action": "Process date",
+        "name_list": "BIN card ribbons list"
+      },
+      "list": {
+        "no": "No.",
+        "number": "BIN card ribbon",
+        "dv": "Issuer",
+        "date": "Effective date",
+        "action": "Process method",
+        "menu": "Action",
+        "account": "Creator's account"
+      }
+    },
+    "transaction": {
+      "title": "Search suspicious transactions",
+      "file_name": "List of the restricted transactions",
+      "search": {
+        "dv": "Merchant ID",
+        "status": "Status",
+        "date": "Effective date",
+        "action": "Process method",
+        "from": "From date",
+        "to": "To date"
+      },
+      "status": {
+        "1": "Success",
+        "0": "Fail"
+      },
+      "list": {
+        "dv": "Department",
+        "date": "Time",
+        "code": "Transaction ID",
+        "price": "Value (VND)",
+        "type": "Form",
+        "action": "Process method",
+        "menu": "Action",
+        "status": "Status",
+        "reason": "Reason"
+      }
+    },
+    "business": {
+      "title": "Search restricted MCC",
+      "title_add": "Add new restricted MCC",
+      "title_edit": "Edit restricted MCC",
+      "title_delete": "Delete restricted MCC",
+      "file_name": "List of the restricted MCC",
+      "search": {
+        "mcc": "MCC",
+        "nameDv": "MCC Name",
+        "group": "MCC group",
+        "date": "Effective date",
+        "action": "Process method",
+        "name_list": "Business types list",
+        "sl": "Transactions per day",
+        "price": "Value per Transaction"
+      },
+      "list": {
+        "no": "No.",
+        "dv": "MCC name",
+        "mcc": "MCC code",
+        "group": "MCC group",
+        "date": "Effective date",
+        "action": "Process method",
+        "menu": "Action",
+        "account": "Creator's account",
+        "amount": "Amount/day",
+        "value": "Value/transaction (VND)",
+        "mcc_name": "MCC name"
+      }
+    },
+    "ip": {
+      "title": "Search restricted IP address",
+      "title_add": "Add new restricted IP address",
+      "title_edit": "Edit restricted IP address",
+      "title_delete": "Delete restricted IP address",
+      "file_name": "List of the restricted IP address",
+      "search": {
+        "number": "IP address",
+        "dv": "Nation",
+        "date": "Effective date",
+        "action": "Process method",
+        "name_list": "IP address"
+      },
+      "list": {
+        "no": "No.",
+        "number": "IP address",
+        "dv": "Nation",
+        "date": "Effective date",
+        "action": "Process method",
+        "menu": "Action",
+        "account": "Creator's account"
+      }
+    },
+    "methodList": {
+      "block": "Block transactions",
+      "warning": "Risk warning"
+    },
+    "errors": {
+      "03": "Status is invalid",
+      "05": "Risk management information already exists",
+      "06": "Risk management information is incorrect",
+      "11": "The activate date must be greater than the current date",
+      "88": "The requested data is invalid",
+      "99": "The system is temporarily unavailable",
+      "upload": "The requested data is invalid at line"
+    },
+    "date": {
+      "from": "Apply from date",
+      "to": "To date"
+    },
+    "undefined": "Not available",
+    "object": "Applied object",
+    "system": "System",
+    "active": {
+      "account": "Account",
+      "card": "Card",
+      "bin": "BIN range",
+      "ip": "IP address",
+      "other": "Configure QLRR",
+      "success": "Success state transition"
+    },
+    "history": {
+      "title": "Update history",
+      "ADD": "new information added",
+      "EDIT": "updated information",
+      "CHANGE_STATUS": "stated to",
+      "noData": "No update history"
+    },
+    "statusList": {
+      "active": "Effective",
+      "inactive": "Inactive"
+    },
+    "left-menu": {
+      "account": "Account/e-wallet",
+      "card": "Bank card",
+      "bin": "Card BIN Range",
+      "ip": "IP address",
+      "other": "Other risk criteria",
+      "suspicious-transaction": "Suspicious transaction",
+      "block-transaction": "Block transaction"
+    },
+    "active-dialog": {
+      "title": "Notice",
+      "text1": "will transition to state",
+      "text2": "Are you sure?"
+    },
+    "other": {
+      "title": "Other Risk Management Criteria List",
+      "name": "Law name",
+      "type": "Type",
+      "value": "Value",
+      "time": "Applicable time",
+      "type-list": {
+        "1": "Transaction exceeds the allowed value",
+        "2": "1 person transfers money to many people",
+        "3": "Many people transfer to 1 person",
+        "4": "Mutational transaction detected",
+        "5": "Customer's account is not trading for more than a year, trading again without a reasonable reason",
+        "6": "Customer's account without transaction suddenly received a large-value money transfer",
+        "7": "Continuously transferring many small amounts in a short time or vice versa",
+        "8": "Low suspicious transaction detected near reported value",
+        "9": "Incorrect OTP too many times"
+      },
+      "add": {
+        "title": "Add new risk profile",
+        "name": "Law name",
+        "type": "Type",
+        "min-amount": "Minimum Threshold Amount",
+        "max-amount": "Maximum threshold amount",
+        "min-account": "Minimum receiving account number",
+        "value": "Increase value",
+        "trans-amount": "Generated GD number",
+        "send-amount": "Number of people to transfer",
+        "receive-amount": "Number of recipients",
+        "no-trans-amount": "Number of days without GD",
+        "time": "Generation time",
+        "amount": "Number of times",
+        "apply-time": "apply time",
+        "status": "Status",
+        "active": "Activate",
+        "placeholder": {
+          "name": "Enter a rule name",
+          "type": "Selection",
+          "min-amount": "Enter the minimum amount",
+          "max-amount": "Enter the maximum amount",
+          "min-account": "Enter the minimum receiving account number",
+          "value": "Enter increment value",
+          "trans-amount": "Enter the generated GD number",
+          "send-amount": "Enter number of senders",
+          "receive-amount": "Enter number of recipients",
+          "no-trans-amount": "Enter the number of days without GD",
+          "time": "dd/mm/yyyy",
+          "amount": "Enter number of times",
+          "from-date": "From date",
+          "to-date": "To date"
+        },
+        "errors": {
+          "99": "The system is temporarily down. Please contact the administrator."
+        },
+        "success": "Add new successful risk configuration"
+      },
+      "edit": {
+        "title": "Update risk configuration",
+        "errors": {
+          "99": "The system is temporarily down. Please contact the administrator."
+        },
+        "success": "Risk configuration update successful"
+      }
+    }
+  }
+}

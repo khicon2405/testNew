@@ -1,0 +1,108 @@
+<mat-card class="transaction-management common-management">
+  <mat-card-content>
+    <mat-card-title class="w-100 mb-4">
+      <div class="row mr-0">
+        <div class="col-md-6">
+          <span class="title page-title">{{ 'batch-file-manager.title' | translate}}</span>
+        </div>
+        <!-- <div class="col-md-6 d-flex justify-content-end pr-0">
+          <button mat-raised-button (click)="exportToExcel()" class="button-search">
+            <i class="fa fa-download"></i>
+            {{ "wallet-register.button.export-excel" | translate }}
+          </button>
+      </div> -->
+      </div>
+      <div class="search-form mt-4">
+        <form [formGroup]="searchForm" (ngSubmit)="searchData()">
+          <div class="row w-100 mr-0 ml-0">
+            <div class="col-12 col-xl-10 pl-0 pr-0 select-container">
+              <mat-form-field class="ct-datepicker custom-position form-control item-1" floatLabel="never">
+                <i class="fa fa-calendar ct-date-icon" (click)="dp1.toggle()" [attr.aria-expanded]="dp1.isOpen"></i>
+                <input matInput type="text" [placeholder]="'batch-file-manager.placeholder.from-date' | translate"
+                  formControlName="fromDate" maxlength="10" bsDatepicker container="" placement="auto"
+                  #dp1="bsDatepicker" [maxDate]="currentDay" [bsConfig]="dateConfig" (keypress)="keyPressDate($event)"
+                  autocomplete="off" (change)="isInvalidDate($event, 'fromDate')" maxlength="10"
+                  (keyup.enter)="searchData()" />
+              </mat-form-field>
+              <mat-form-field class="ct-datepicker custom-position form-control item-2" floatLabel="never">
+                <i class="fa fa-calendar ct-date-icon" (click)="dp2.toggle()" [attr.aria-expanded]="dp2.isOpen"></i>
+                <input matInput type="text" [placeholder]="'batch-file-manager.placeholder.to-date' | translate"
+                  formControlName="toDate" maxlength="10" bsDatepicker container="" placement="auto" #dp2="bsDatepicker"
+                  [maxDate]="currentDay" [bsConfig]="dateConfig" (keypress)="keyPressDate($event)" autocomplete="off"
+                  (change)="isInvalidDate($event, 'toDate')" maxlength="10" (keyup.enter)="searchData()" />
+              </mat-form-field>
+              <input type="text" formControlName="textSearch" class="form-control item-5" style="width: 40%;"
+                [placeholder]="'batch-file-manager.placeholder.input-text' | translate" />
+
+            </div>
+            <div class="col-12 col-xl-2 pr-0 button-container">
+              <button mat-raised-button class="button-search">
+                <i class="fa fa-search"></i>
+                {{ 'wallet-register.button.search' | translate }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-card-title>
+    <div class="table-responsive table-hover">
+      <table class="management-table table">
+        <thead>
+          <tr>
+            <th class="col-no">
+              {{ 'batch-file-manager.data-column.number' | translate }}
+            </th>
+            <th class="col-full-date">
+              {{ 'batch-file-manager.data-column.reconcile-date' | translate }}
+            </th>
+            <th class="col-name">
+              {{ 'batch-file-manager.data-column.partner-name' | translate }}
+            </th>
+            <th class="col-name">
+              {{ 'batch-file-manager.data-column.file-location' | translate }}
+            </th>
+            <th class="col-name">
+              {{ 'batch-file-manager.data-column.received-time' | translate }}
+            </th>
+            <th class="col-name">
+              {{ 'batch-file-manager.data-column.batch-file-name' | translate }}
+            </th>
+            <th class="col-status">
+              {{ 'batch-file-manager.data-column.action' | translate }}
+            </th>
+          </tr>
+        </thead>
+        <tbody *ngIf="dataTable && dataTable.length">
+          <tr *ngFor="let item of dataTable; let i = index" class="pointer">
+            <td class="col-no text-center">
+              {{ ((page-1)*pageSize) + i + 1 }}
+            </td>
+            <td class="col-name text-center">
+              {{ item.processDate | date: 'dd/MM/yyyy' }}
+            </td>
+            <td class="col-full-date">
+              {{ item.partnerName }}
+            </td>
+            <td class="col-name">
+              {{ item.folderFile }}
+            </td>
+            <td class="col-full-date">
+              {{ item.excuteDate | date: 'dd/MM/yyyy HH:mm'}}
+            </td>
+            <td class="col-name">
+              {{ item.bfName }}
+            </td>
+            <td class="col-name text-center">
+              <button type="button" class="btn btn-outline-primary" (click)="downloadFile(item.bfName)">
+                <mat-icon>cloud_download</mat-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ite-pagination [page]="page" [pageSize]="pageSize" [total]="total" (pageChange)="changePage($event)"
+      (pageSizeChange)="onPageSizeChange($event)" [loading]="loading">
+    </ite-pagination>
+  </mat-card-content>
+</mat-card>

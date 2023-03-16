@@ -1,0 +1,545 @@
+<mat-card class="example-card common-management">
+  <mat-card-title class="fs-16 mb-0 row d-flex">
+    <div class="col-md-8">
+      <span class="title page-title">{{
+        "reports.non-financial-transaction-report.title" | translate
+      }}</span>
+    </div>
+  </mat-card-title>
+</mat-card>
+
+<!-- ------Thông tin chung-----l -->
+<mat-card class="transaction-management common-management mt-3">
+  <mat-card-content>
+    <mat-panel-title>
+      <h6 class="m-0">
+        {{
+          "reports.payment-transaction-report.general-infor.title" | translate
+        }}
+      </h6>
+    </mat-panel-title>
+    <mat-card-title class="w-100 mb-4">
+      <div class="search-form mt-4">
+        <form [formGroup]="searchForm" (ngSubmit)="searchData()">
+          <div class="row w-100 mr-0 ml-0">
+            <div class="col-12 col-xl-10 pl-0 pr-0 select-container">
+              <mat-select
+                class="form-control item-3 col-4"
+                formControlName="listTransType"
+                disableOptionCentering
+                multiple
+                panelClass="ct-select-position dialog-select"
+                placeholder="{{
+                  'reports.payment-transaction-report.general-infor.type'
+                    | translate
+                }}"
+              >
+                <mat-option
+                  #allSelected
+                  (click)="toggleAllSelection()"
+                  value=""
+                  >{{ "reconcile-all.service" | translate }}</mat-option
+                >
+                <mat-option
+                  *ngFor="let item of transTypeLists"
+                  value="{{ item.value }}"
+                >
+                  {{ item.desc | translate }}
+                </mat-option>
+              </mat-select>
+              <mat-form-field
+                class="ct-datepicker custom-position form-control item-1 col-3"
+                floatLabel="never"
+              >
+                <i
+                  class="fa fa-calendar ct-date-icon"
+                  (click)="dp1.toggle()"
+                  [attr.aria-expanded]="dp1.isOpen"
+                ></i>
+                <input
+                  matInput
+                  type="text"
+                  [placeholder]="
+                    'reports.payment-transaction-report.general-infor.date'
+                      | translate
+                  "
+                  formControlName="fromDate"
+                  maxlength="10"
+                  bsDatepicker
+                  container=""
+                  placement="auto"
+                  #dp1="bsDatepicker"
+                  [maxDate]="currentDay"
+                  [bsConfig]="dateConfig"
+                  (keypress)="keyPressDate($event)"
+                  autocomplete="off"
+                  (change)="isInvalidDate($event, 'fromDate')"
+                  maxlength="10"
+                  (keyup.enter)="searchData()"
+                />
+              </mat-form-field>
+              <mat-form-field
+                class="ct-datepicker custom-position form-control item-1 col-3"
+                floatLabel="never"
+              >
+                <i
+                  class="fa fa-calendar ct-date-icon"
+                  (click)="dp2.toggle()"
+                  [attr.aria-expanded]="dp2.isOpen"
+                ></i>
+                <input
+                  matInput
+                  type="text"
+                  [placeholder]="
+                    'reports.payment-transaction-report.general-infor.date'
+                      | translate
+                  "
+                  formControlName="toDate"
+                  maxlength="10"
+                  bsDatepicker
+                  container=""
+                  placement="auto"
+                  #dp2="bsDatepicker"
+                  [maxDate]="currentDay"
+                  [bsConfig]="dateConfig"
+                  (keypress)="keyPressDate($event)"
+                  autocomplete="off"
+                  (change)="isInvalidDate($event, 'toDate')"
+                  maxlength="10"
+                  (keyup.enter)="searchData()"
+                />
+              </mat-form-field>
+            </div>
+            <div class="col-12 col-xl-2 pr-0 button-container">
+              <button mat-raised-button class="button-search">
+                <i class="fa fa-search"></i>
+                {{ "reconcile-non-financial.button.search" | translate }}
+              </button>
+              <button
+                type="button"
+                mat-raised-button
+                class="button-search ml-2 pl-2 pr-2"
+                style="background: #ff5e00"
+                (click)="exportFileExcel()"
+              >
+                <i class="fa fa-cloud-download mr-1"></i>
+                {{
+                  "reconcile-paygate-financial.button.excel-export" | translate
+                }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-card-title>
+  </mat-card-content>
+</mat-card>
+
+<!-- -------Giao dịch cân khớp -------l -->
+<div class="mt-3">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true" class="ct-expansion">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h6 class="m-0">
+            {{
+              "reports.non-financial-transaction-report.balance-transaction.title"
+                | translate
+            }}
+          </h6>
+          <br />
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="ct-expansion-content">
+        <h6 class="mr-3">
+          {{
+            "reports.non-financial-transaction-report.balance-transaction.total"
+              | translate
+          }}: {{ listResultCode00?.length }}
+        </h6>
+      </div>
+      <div class="table-responsive table-hover common-management">
+        <table class="management-table table">
+          <thead>
+            <tr>
+              <th class="table-head-item text-center">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.no"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.tran-time"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.code-trading-CTT"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.code-trading-MB"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.name-client"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.transaction-status"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.no-GTTT"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.phoneNumber"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.wallet-code"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.accountNumber"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.createdDate"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.statusHandle"
+                    | translate
+                }}
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="table-body"
+            *ngIf="listResultCode00 && listResultCode00.length"
+          >
+            <tr *ngFor="let item of listResultCode00; let i = index">
+              <td class="text-center td-no">{{ i + 1 }}</td>
+              <td class="text-center">{{ item?.transDateTime }}</td>
+              <td class="text-center">{{ item?.tradingCTT_Code }}</td>
+              <td class="text-center">{{ item?.mB_TransactionId }}</td>
+              <td class="text-center">{{ item?.customerName }}</td>
+              <td class="text-center">{{ item?.transStatus }}</td>
+              <td class="text-center">{{ item?.customerIdCard }}</td>
+              <td class="text-center">{{ item?.phoneNumber }}</td>
+              <td class="text-center">{{ item?.walletId }}</td>
+              <td class="text-center">{{ item?.accountNumber }}</td>
+              <td class="text-center">{{ item?.lastUpdate }}</td>
+              <td class="text-center">{{ item?.processingStatus }}</td>
+            </tr>
+          </tbody>
+          <tfoot *ngIf="!(listResultCode00 && listResultCode00.length)">
+            <tr>
+              <td [colSpan]="12">
+                <div class="text-center no-data ng-star-inserted">
+                  <span style="font-weight: normal"
+                    >Không tìm thấy kết quả nào</span
+                  >
+                </div>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+<!-- -------Giao dịch chênh lệch thùa MB -------l -->
+<div class="mt-3">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true" class="ct-expansion">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h6 class="m-0">
+            {{
+              "reports.non-financial-transaction-report.excess-arbitrage-MB.title"
+                | translate
+            }}
+          </h6>
+          <br />
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="ct-expansion-content">
+        <h6 class="mr-3">
+          {{
+            "reports.non-financial-transaction-report.balance-transaction.total"
+              | translate
+          }}: {{ listResultCode30?.length }}
+        </h6>
+      </div>
+      <div class="table-responsive table-hover common-management">
+        <table class="management-table table">
+          <thead>
+            <tr>
+              <th class="table-head-item text-center">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.no"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.tran-time"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.code-trading-CTT"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.code-trading-MB"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.name-client"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.transaction-status"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.no-GTTT"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.phoneNumber"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.wallet-code"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.accountNumber"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.createdDate"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.statusHandle"
+                    | translate
+                }}
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="table-body"
+            *ngIf="listResultCode30 && listResultCode30.length"
+          >
+            <tr *ngFor="let item of listResultCode30; let i = index">
+              <td class="text-center td-no">{{ i + 1 }}</td>
+              <td class="text-center">{{ item?.transDateTime }}</td>
+              <td class="text-center">{{ item?.tradingCTT_Code }}</td>
+              <td class="text-center">{{ item?.mB_TransactionId }}</td>
+              <td class="text-center">{{ item?.customerName }}</td>
+              <td class="text-center">{{ item?.transStatus }}</td>
+              <td class="text-center">{{ item?.customerIdCard }}</td>
+              <td class="text-center">{{ item?.phoneNumber }}</td>
+              <td class="text-center">{{ item?.walletId }}</td>
+              <td class="text-center">{{ item?.accountNumber }}</td>
+              <td class="text-center">{{ item?.lastUpdate }}</td>
+              <td class="text-center">{{ item?.processingStatus }}</td>
+            </tr>
+          </tbody>
+          <tfoot *ngIf="!(listResultCode30 && listResultCode30.length)">
+            <tr>
+              <td [colSpan]="12">
+                <div class="text-center no-data ng-star-inserted">
+                  <span style="font-weight: normal"
+                    >Không tìm thấy kết quả nào</span
+                  >
+                </div>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+<!-- -------Giao dịch lệnh thưa BAV -------l -->
+<div class="mt-3">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true" class="ct-expansion">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h6 class="m-0">
+            {{
+              "reports.non-financial-transaction-report.excess-arbitrage-BAV.title"
+                | translate
+            }}
+          </h6>
+          <br />
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="ct-expansion-content">
+        <h6 class="mr-3">
+          {{
+            "reports.non-financial-transaction-report.balance-transaction.total"
+              | translate
+          }}: {{ listResultCode03?.length }}
+        </h6>
+      </div>
+      <div class="table-responsive table-hover common-management">
+        <table class="management-table table">
+          <thead>
+            <tr>
+              <th class="table-head-item text-center">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.no"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.tran-time"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.code-trading-CTT"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.code-trading-MB"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.name-client"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.transaction-status"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.no-GTTT"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.phoneNumber"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.wallet-code"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.accountNumber"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.createdDate"
+                    | translate
+                }}
+              </th>
+              <th class="table-head-item">
+                {{
+                  "reports.non-financial-transaction-report.balance-transaction.table.statusHandle"
+                    | translate
+                }}
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="table-body"
+            *ngIf="listResultCode03 && listResultCode03.length"
+          >
+            <tr *ngFor="let item of listResultCode03; let i = index">
+              <td class="text-center td-no">{{ i + 1 }}</td>
+              <td class="text-center">{{ item?.transDateTime }}</td>
+              <td class="text-center">{{ item?.tradingCTT_Code }}</td>
+              <td class="text-center">{{ item?.mB_TransactionId }}</td>
+              <td class="text-center">{{ item?.customerName }}</td>
+              <td class="text-center">{{ item?.transStatus }}</td>
+              <td class="text-center">{{ item?.customerIdCard }}</td>
+              <td class="text-center">{{ item?.phoneNumber }}</td>
+              <td class="text-center">{{ item?.walletId }}</td>
+              <td class="text-center">{{ item?.accountNumber }}</td>
+              <td class="text-center">{{ item?.lastUpdate }}</td>
+              <td class="text-center">{{ item?.processingStatus }}</td>
+            </tr>
+          </tbody>
+          <tfoot *ngIf="!(listResultCode03 && listResultCode03.length)">
+            <tr>
+              <td [colSpan]="12">
+                <div class="text-center no-data ng-star-inserted">
+                  <span style="font-weight: normal"
+                    >Không tìm thấy kết quả nào</span
+                  >
+                </div>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

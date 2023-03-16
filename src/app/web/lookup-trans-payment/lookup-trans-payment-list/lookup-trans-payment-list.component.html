@@ -1,0 +1,336 @@
+<mat-card class="transaction-management common-management">
+  <mat-card-content>
+    <mat-card-title class="w-100 mb-4">
+      <div class="row mr-0">
+        <div class="col-md-6">
+          <span class="title page-title">{{
+            "lookup-transaction-payment.title" | translate
+          }}</span>
+        </div>
+        <!-- <div class="col-md-6 d-flex justify-content-end pr-0">
+            <button mat-raised-button (click)="exportToExcel()" class="button-search">
+              <i class="fa fa-download"></i>
+              {{ "wallet-register.button.export-excel" | translate }}
+            </button>
+        </div> -->
+      </div>
+      <div class="search-form mt-4">
+        <form [formGroup]="searchForm" (ngSubmit)="searchData()">
+          <div class="row w-100 mr-0 ml-0">
+            <div class="col-12 col-xl-10 pl-0 pr-0 select-container">
+              <mat-select
+                class="form-control col-4"
+                formControlName="listTransType"
+                disableOptionCentering
+                multiple
+                panelClass="ct-select-position dialog-select"
+                placeholder="{{
+                  'reconcile-non-financial.placeholder.trans-type' | translate
+                }}"
+              >
+                <mat-option
+                  #allSelected
+                  (click)="toggleAllService()"
+                  value=""
+                  >{{ "reconcile-all.service" | translate }}</mat-option
+                >
+                <mat-option
+                  *ngFor="let item of transTypeLists"
+                  value="{{ item.value }}"
+                >
+                  {{ item.desc | translate }}
+                </mat-option>
+              </mat-select>
+              <mat-select
+                class="form-control col-2"
+                formControlName="listPaymentMethods"
+                disableOptionCentering
+                multiple
+                panelClass="ct-select-position dialog-select"
+                placeholder="{{
+                  'lookup-transaction-payment.placeholder.trans-methods'
+                    | translate
+                }}"
+              >
+                <mat-option
+                  #allSelected
+                  (click)="toggleAllMethods()"
+                  value=""
+                  >{{ "reconcile-all.payment-methods" | translate }}</mat-option
+                >
+                <mat-option
+                  *ngFor="let item of paymentMethodsLists"
+                  value="{{ item.value }}"
+                >
+                  {{ item.desc | translate }}
+                </mat-option>
+              </mat-select>
+              <mat-select
+                class="form-control col-2"
+                formControlName="listChannel"
+                disableOptionCentering
+                multiple
+                panelClass="ct-select-position dialog-select"
+                placeholder="{{
+                  'lookup-transaction-payment.placeholder.transaction-channel'
+                    | translate
+                }}"
+              >
+                <mat-option
+                  #allSelected
+                  (click)="toggleAllChannel()"
+                  value=""
+                  >{{ "reconcile-all.trans-channel" | translate }}</mat-option
+                >
+                <mat-option
+                  *ngFor="let item of channelLists"
+                  value="{{ item.value }}"
+                >
+                  {{ item.desc | translate }}
+                </mat-option>
+              </mat-select>
+              <mat-select
+                class="form-control col-3"
+                formControlName="listStatus"
+                disableOptionCentering
+                multiple
+                panelClass="ct-select-position dialog-select"
+                placeholder="{{
+                  'lookup-transaction-payment.placeholder.trans-status'
+                    | translate
+                }}"
+              >
+                <mat-option #allSelected (click)="toggleAllStatus()" value="">{{
+                  "reconcile-all.status" | translate
+                }}</mat-option>
+                <mat-option
+                  *ngFor="let item of statusLists"
+                  value="{{ item.value }}"
+                >
+                  {{ item.desc | translate }}
+                </mat-option>
+              </mat-select>
+              <mat-form-field
+                class="ct-datepicker custom-position form-control col-2"
+                floatLabel="never"
+              >
+                <i
+                  class="fa fa-calendar ct-date-icon"
+                  (click)="dp1.toggle()"
+                  [attr.aria-expanded]="dp1.isOpen"
+                ></i>
+                <input
+                  matInput
+                  type="text"
+                  [placeholder]="
+                    'lookup-transaction-payment.placeholder.date-from'
+                      | translate
+                  "
+                  formControlName="fromDate"
+                  maxlength="10"
+                  bsDatepicker
+                  container=""
+                  placement="auto"
+                  #dp1="bsDatepicker"
+                  [maxDate]="currentDay"
+                  [bsConfig]="dateConfig"
+                  (keypress)="keyPressDate($event)"
+                  autocomplete="off"
+                  (change)="isInvalidDate($event, 'fromDate')"
+                  maxlength="10"
+                  (keyup.enter)="searchData()"
+                />
+              </mat-form-field>
+              <mat-form-field
+                class="ct-datepicker custom-position form-control col-2"
+                floatLabel="never"
+              >
+                <i
+                  class="fa fa-calendar ct-date-icon"
+                  (click)="dp2.toggle()"
+                  [attr.aria-expanded]="dp2.isOpen"
+                ></i>
+                <input
+                  matInput
+                  type="text"
+                  [placeholder]="
+                    'lookup-transaction-payment.placeholder.date-to' | translate
+                  "
+                  formControlName="toDate"
+                  maxlength="10"
+                  bsDatepicker
+                  container=""
+                  placement="auto"
+                  #dp2="bsDatepicker"
+                  [maxDate]="currentDay"
+                  [bsConfig]="dateConfig"
+                  (keypress)="keyPressDate($event)"
+                  autocomplete="off"
+                  (change)="isInvalidDate($event, 'toDate')"
+                  maxlength="10"
+                  (keyup.enter)="searchData()"
+                />
+              </mat-form-field>
+              <input
+                type="text"
+                formControlName="textSearch"
+                class="form-control col-5"
+                style="width: 37%"
+                [placeholder]="
+                  'lookup-transaction-payment.placeholder.search-text'
+                    | translate
+                "
+              />
+            </div>
+            <div class="col-12 col-xl-2 pr-0 button-container">
+              <button mat-raised-button class="button-search">
+                <i class="fa fa-search"></i>
+                {{ "lookup-transaction-payment.button.search" | translate }}
+              </button>
+              <button
+                type="button"
+                mat-raised-button
+                class="button-search ml-2 pl-2 pr-2"
+                style="background: #ff5e00"
+                (click)="exportFileExcel()"
+              >
+                <i class="fa fa-cloud-download mr-1"></i>
+                {{
+                  "lookup-transaction-payment.button.export-excel" | translate
+                }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-card-title>
+    <div class="table-responsive table-hover">
+      <table class="management-table table">
+        <thead>
+          <tr>
+            <th class="col-no">
+              {{ "lookup-transaction-payment.header.no" | translate }}
+            </th>
+            <th class="col-trans-type">
+              {{ "lookup-transaction-payment.header.trans-type" | translate }}
+            </th>
+            <th class="col-order_bav">
+              {{ "lookup-transaction-payment.header.order_bav" | translate }}
+            </th>
+            <th class="col-transaction-number">
+              {{
+                "lookup-transaction-payment.header.transaction-number"
+                  | translate
+              }}
+            </th>
+            <th class="col-transaction-mb">
+              {{
+                "lookup-transaction-payment.header.transaction-mb" | translate
+              }}
+            </th>
+            <th class="col-order-id">
+              {{ "lookup-transaction-payment.header.order-id" | translate }}
+            </th>
+            <th class="col-amount">
+              {{ "lookup-transaction-payment.header.amount" | translate }}
+            </th>
+            <th class="col-transaction-status">
+              {{
+                "lookup-transaction-payment.header.transaction-status"
+                  | translate
+              }}
+            </th>
+            <th class="col-transaction-time">
+              {{
+                "lookup-transaction-payment.header.transaction-time" | translate
+              }}
+            </th>
+            <th class="col-payment-methods">
+              {{
+                "lookup-transaction-payment.header.payment-methods" | translate
+              }}
+            </th>
+            <th class="col-issuers">
+              {{ "lookup-transaction-payment.header.issuers" | translate }}
+            </th>
+            <th class="col-payment-account">
+              {{
+                "lookup-transaction-payment.header.payment-account" | translate
+              }}
+            </th>
+            <th class="col-account-holder">
+              {{
+                "lookup-transaction-payment.header.account-holder" | translate
+              }}
+            </th>
+            <th class="col-transaction-channel">
+              {{
+                "lookup-transaction-payment.header.transaction-channel"
+                  | translate
+              }}
+            </th>
+          </tr>
+        </thead>
+        <tbody *ngIf="dataTable && dataTable.length">
+          <tr
+            *ngFor="let item of dataTable; let i = index"
+            (dblclick)="viewDetail(item.id)"
+            class="pointer"
+          >
+            <td class="col-no text-center">
+              {{ (page - 1) * pageSize + i + 1 }}
+            </td>
+            <td class="col-name text-center">
+              {{ item.transType }}
+            </td>
+            <td class="col-name text-center">
+              {{ item.baV_Order_ID }}
+            </td>
+            <td class="col-name text-center">
+              {{ item.tradingCTT_Code }}
+            </td>
+            <td class="col-name text-center">
+              {{ item.mB_TransactionId }}
+            </td>
+            <td class="col-name text-center">
+              {{ item.orderID }}
+            </td>
+            <td class="col-name text-center">
+              {{ formatMoney(item.amount, 0, 3) }}
+            </td>
+            <td class="col-name text-center">
+              {{ item.transStatus }}
+            </td>
+            <td class="col-name text-center">
+              {{ item.transDateTime }}
+            </td>
+            <td class="col-name text-center">
+              {{ item.paymentMethods }}
+            </td>
+            <td class="col-name text-center">
+              {{ item.issuers }}
+            </td>
+            <td class="col-name text-center">
+              {{ item.paymentAccount }}
+            </td>
+            <td class="col-name text-center">
+              {{ item.accountHolder }}
+            </td>
+            <td class="col-name text-center">
+              {{ item.tradingChannel }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ite-pagination
+      [page]="page"
+      [pageSize]="pageSize"
+      [total]="total"
+      (pageChange)="changePage($event)"
+      (pageSizeChange)="onPageSizeChange($event)"
+      [loading]="loading"
+    >
+    </ite-pagination>
+  </mat-card-content>
+</mat-card>

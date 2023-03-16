@@ -1,0 +1,191 @@
+<mat-card class="example-card common-management">
+  <mat-card-title class="fs-16 mb-0 row d-flex">
+    <div class="col-md-8">
+      <span class="title page-title">{{
+        "reconcile-manager.title" | translate
+      }}</span>
+    </div>
+  </mat-card-title>
+</mat-card>
+<!-- ------- đối soát -------l -->
+<mat-card class="transaction-management common-management mt-3">
+  <mat-card-content>
+    <mat-panel-title>
+      <h6 class="m-0">
+        {{ "reconcile-manager.reconcileManager.title" | translate }}
+      </h6>
+    </mat-panel-title>
+    <hr style="width: 100%" />
+    <mat-card-title class="w-100 mb-4">
+      <div class="search-form mt-4">
+        <form [formGroup]="jobReconcileForm">
+          <div class="row w-100 mr-0 ml-0">
+            <div class="col-12 col-xl-10 pl-0 pr-0 select-container mb-4">
+              <mat-form-field
+                class="ct-datepicker custom-position form-control col-3"
+                floatLabel="never"
+              >
+                <i
+                  class="fa fa-calendar ct-date-icon"
+                  (click)="dp1.toggle()"
+                  [attr.aria-expanded]="dp1.isOpen"
+                ></i>
+                <input
+                  matInput
+                  type="text"
+                  [placeholder]="
+                    'reconcile-manager.reconcileManager.placeholder.reconcile-date'
+                      | translate
+                  "
+                  formControlName="dateTime"
+                  maxlength="10"
+                  bsDatepicker
+                  container=""
+                  placement="auto"
+                  #dp1="bsDatepicker"
+                  [maxDate]="currentDay"
+                  [bsConfig]="dateConfig"
+                  (keypress)="keyPressDate($event)"
+                  autocomplete="off"
+                  (change)="isInvalidDate($event, 'dateTime')"
+                  maxlength="10"
+                />
+              </mat-form-field>
+              <input
+                type="text"
+                formControlName="description"
+                class="form-control col-8"
+                [placeholder]="
+                  'reconcile-manager.reconcileManager.placeholder.description'
+                    | translate
+                "
+              />
+            </div>
+            <div class="col-12 col-xl-2 pr-0 button-container">
+              <button
+                mat-raised-button
+                class="button-search col-12"
+                style="background-color: #fd7e14"
+                (click)="runJobReconcile()"
+              >
+                <i class="fa fa-cog"></i>
+                {{
+                  "reconcile-manager.reconcileManager.button.RunJob" | translate
+                }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-card-title>
+  </mat-card-content>
+</mat-card>
+<!-- -------gửi file đối soát -------l -->
+<mat-card class="transaction-management common-management mt-3">
+  <mat-card-content>
+    <mat-panel-title>
+      <h6 class="m-0">
+        {{ "reconcile-manager.sendFileReconcile.title" | translate }}
+      </h6>
+    </mat-panel-title>
+    <hr style="width: 100%" />
+    <mat-card-title class="w-100 mb-4">
+      <div class="search-form mt-4">
+        <form [formGroup]="sendFileMBForm">
+          <div class="row w-100 mr-0 ml-0">
+            <div class="col-10 col-xl-10 pl-0 pr-0 select-container mb-4">
+              <div class="col-12 col-xl-12 row">
+                <mat-form-field
+                  class="ct-datepicker custom-position form-control col-3"
+                  floatLabel="never"
+                >
+                  <i
+                    class="fa fa-calendar ct-date-icon"
+                    (click)="dp2.toggle()"
+                    [attr.aria-expanded]="dp2.isOpen"
+                  ></i>
+                  <input
+                    matInput
+                    type="text"
+                    [placeholder]="
+                      'reconcile-manager.sendFileReconcile.placeholder.reconcile-date'
+                        | translate
+                    "
+                    formControlName="queryDate"
+                    maxlength="10"
+                    bsDatepicker
+                    container=""
+                    placement="auto"
+                    #dp2="bsDatepicker"
+                    [maxDate]="currentDayExport"
+                    [bsConfig]="dateConfig"
+                    (keypress)="keyPressDate($event)"
+                    autocomplete="off"
+                    (blur)="isInvalidDate1($event, 'queryDate')"
+                    maxlength="10"
+                  />
+                </mat-form-field>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="isSpecific"
+                    formControlName="isSpecific"
+                    (change)="checkSpecific($event)"
+                  />
+                  {{
+                    "reconcile-manager.sendFileReconcile.placeholder.nameSpecific"
+                      | translate
+                  }}
+                </label>
+                <mat-select
+                  *ngIf="sendFileMBForm.value.isSpecific == true"
+                  class="form-control col-5 ml-5"
+                  formControlName="specificqueryDate"
+                  disableOptionCentering
+                  multiple
+                  panelClass="ct-select-position dialog-select"
+                  placeholder="{{
+                    'reconcile-manager.sendFileReconcile.placeholder.date-specific'
+                      | translate
+                  }}"
+                >
+                  <mat-option
+                    *ngFor="let item of listQueryDate"
+                    value="{{ item.value }}"
+                  >
+                    {{ item.des }}
+                  </mat-option>
+                </mat-select>
+              </div>
+              <div class="col-12 col-xl-12 row">
+                <input
+                  type="text"
+                  formControlName="description"
+                  class="form-control col-10"
+                  [placeholder]="
+                    'reconcile-manager.sendFileReconcile.placeholder.description'
+                      | translate
+                  "
+                />
+              </div>
+            </div>
+            <div class="col-2 col-xl-2 pr-0 button-container m-auto">
+              <button
+                mat-raised-button
+                class="button-search col-12"
+                style="background-color: #fd7e14"
+                (click)="sendFileMB()"
+              >
+                <i class="fa fa-cog"></i>
+                {{
+                  "reconcile-manager.sendFileReconcile.button.SendFile"
+                    | translate
+                }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-card-title>
+  </mat-card-content>
+</mat-card>

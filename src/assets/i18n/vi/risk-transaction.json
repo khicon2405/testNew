@@ -1,0 +1,39 @@
+{
+    "risk-transaction": {
+        "title": "Danh sách giao dịch nghi ngờ",
+        "trans-day": "Ngày giao dịch",
+        "bank": "Tất cả ngân hàng",
+        "trans-type": "Loại giao dịch",
+        "reason": "Lý do",
+        "account": "Số tài khoản/ví/thẻ",
+        "account-info": {
+            "title": "Thông tin tài khoản",
+            "card-no": "Số thẻ",
+            "owner": "Chủ thẻ",
+            "wallet-no": "Số TK ví",
+            "expired-date": "Ngày hết hạn"
+        },
+        "errors": {
+            "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị."
+        },
+        "trans-type-list": {
+            "deposit": "Nạp tiền", 
+            "withdraw": "Rút tiền", 
+            "transfer": "Chuyển tiền điện tử",
+            "payment": "Thanh toán"
+        }
+    },
+    "risk-transaction-detail": {
+        "errors": {
+            "01": "Không tìm thấy giao dịch"
+        }
+    },
+    "block-transaction": {
+        "title": "Danh sách giao dịch chặn"
+    },
+    "block-transaction-detail": {
+        "errors": {
+            "01": "Không tìm thấy giao dịch"
+        }
+    }
+}

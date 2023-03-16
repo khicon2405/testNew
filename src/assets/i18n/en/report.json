@@ -1,0 +1,134 @@
+{
+  "reports": {
+    "transfer": {
+      "partner-info-report": {
+        "type-list": {
+          "bank": "Ngân hàng hợp tác",
+          "customer": "Khách hàng sử dụng dịch vụ"
+        },
+        "amount": "Số lượng khách hàng",
+        "errors": {
+          "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị."
+        }
+      },
+      "transaction-info-report": {
+        "errors": {
+          "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị."
+        }
+      }
+    },
+    "paygate": {
+      "partner-info-report": {
+        "errors": {
+          "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị."
+        }
+      },
+      "transaction-info-report": {
+        "errors": {
+          "99": "Hệ thống tạm thời gián đoạn. Vui lòng liên hệ ban quản trị."
+        }
+      }
+    },
+    "payment-transaction-report": {
+      "title": "Chi tiết kết quả báo cáo đối soát giao dịch thanh toán",
+      "general-infor": {
+        "title": "Thông tin chung",
+        "type": "Loại dịch vụ",
+        "date": "Ngày giao dịch"
+      },
+      "balance-transaction": {
+        "title": "Giao dịch cân khớp",
+        "total": "Tổng",
+        "table": {
+          "no": "STT",
+          "tran-time": "Ngày giao dịch",
+          "code-order-BAV": "Mã đơn hàng - BAV",
+          "code-trading-CTT": "Mã giao dịch tại CTT",
+          "code-trading-MB": "Mã giao dịch MB",
+          "money": "Số tiền thanh toán",
+          "currency": "Loại tiền tệ",
+          "transaction-status": "Trạng thái GD",
+          "pttt": "PTTT",
+          "type-payment": "Loại thanh toán",
+          "OrderID": "Order ID",
+          "issuers": "Tổ chức phát hành",
+          "payment-account": "Tài khoản thanh toán",
+          "chanel-transaction": "Kênh giao dịch",
+          "updated-date": "Ngày cập nhật",
+          "status-handle": "Trạng thái xử lí"
+        }
+      },
+      "excess-arbitrage-MB": {
+        "title": "Giao dịch chênh lệch thừa MB"
+      },
+      "excess-arbitrage-BAV": {
+        "title": "Giao dịch chênh lệch thừa BAV"
+      }
+    },
+    "financial-transaction-report": {
+      "title": "Chi tiết kết quả báo cáo đối soát giao dịch tài chính",
+      "general-infor": {
+        "title": "Thông tin chung",
+        "type": "Loại dịch vụ",
+        "date": "Ngày giao dịch"
+      },
+      "balance-transaction": {
+        "title": "Giao dịch cân khớp",
+        "total": "Tổng",
+        "table": {
+          "no": "STT",
+          "tran-time": "Ngày giao dịch",
+          "code-trading-CTT": "Mã giao dịch tại CTT",
+          "code-trading-MB": "Mã giao dịch MB",
+          "money": "Số tiền thanh toán",
+          "transaction-status": "Trạng thái GD",
+          "pttt": "PTTT",
+          "start-account": "Tài khoản nguồn",
+          "end-account": "Tài khoản đích",
+          "chanel-transaction": "Kênh giao dịch",
+          "updated-date": "Ngày cập nhật",
+          "status-handle": "Trạng thái xử lí"
+        }
+      },
+      "excess-arbitrage-MB": {
+        "title": "Giao dịch chênh lệch thừa MB"
+      },
+      "excess-arbitrage-BAV": {
+        "title": "Giao dịch chênh lệch thừa BAV"
+      }
+    },
+    "non-financial-transaction-report": {
+      "title": "Chi tiết kết quả báo cáo đối soát giao dịch phi tài chính",
+      "general-infor": {
+        "title": "Thông tin chung",
+        "type": "Loại dịch vụ",
+        "date": "Ngày giao dịch"
+      },
+      "balance-transaction": {
+        "title": "Giao dịch cân khớp",
+        "total": "Tổng",
+        "table": {
+          "no": "STT",
+          "tran-time": "Ngày giao dịch",
+          "code-trading-CTT": "Mã giao dịch tại CTT",
+          "code-trading-MB": "Mã giao dịch MB",
+          "name-client": "Tên khách hàng",
+          "transaction-status": "Trạng thái GD",
+
+          "no-GTTT": "Số GTTT",
+          "phoneNumber": "SĐT",
+          "wallet-code": "Mã ví",
+          "accountNumber": "Số TK liên kết",
+          "createdDate": "Ngày thực hiện",
+          "statusHandle": "Trạng thái xử lí"
+        }
+      },
+      "excess-arbitrage-MB": {
+        "title": "Giao dịch chênh lệch thừa MB"
+      },
+      "excess-arbitrage-BAV": {
+        "title": "Giao dịch chênh lệch thừa BAV"
+      }
+    }
+  }
+}

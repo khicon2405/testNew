@@ -1,0 +1,49 @@
+{
+    "collect-pay": {
+        "title": "List of collection and payment transactions",
+        "trans-type": "All GD types",
+        "trans-type-list": {
+            "1": "Collecting",
+            "2": "Payment for"
+        },
+        "table-header": {
+            "contract-no": "contract code",
+            "trans-type": "GD type",
+            "time": "GD Day"
+        },
+        "detail": {
+            "service": "Service",
+            "supplier": "Supplier"
+        },
+        "add": "Create GD for you",
+        "customer-account": "Customer account number",
+        "bill": "Invoice code",
+        "check": "Check",
+        "total": "Total payment (VND)",
+        "payment": "Payment",
+        "placeholder": {
+            "account": "Enter customer account number",
+            "bill": "Enter invoice code"
+        },
+        "confirm": "Confirm payment",
+        "confirm-btn": "Confirm",
+        "left-menu": {
+            "list": "List of GD",
+            "pay": "pay for"
+        },
+        "errors": {
+            "99": "The system is temporarily down. Please contact the administrator."
+        },
+        "check-customer-errors": {
+            "01": "Account not found",
+            "02": "Invalid account status"
+        },
+        "check-order-errors": {
+            "01": "Account not found",
+            "02": "Invalid account status"
+        },
+        "add-errors": {
+            "99": "The system is temporarily down. Please contact the administrator."
+        }
+    }
+}

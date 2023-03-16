@@ -1,0 +1,23 @@
+{
+    "secure-account": {
+        "title": "List of accounts that guarantee payment",
+        "settlement-date": "settlement date",
+        "account-name": "Account name",
+        "account-no": "Secure account number",
+        "total-wallet": "Total number of wallets",
+        "total-value-wallet": "Total wallet balance (VND)",
+        "total-value-bank": "Total special account balance at the bank (VND)",
+        "settlement-button": "settlement",
+        "settlement-dialog": "settlement of payment guarantee account",
+        "settlement-success": "Account settlement ensures successful payment",
+        "placeholder": {
+            "value": "Enter special account balance at the bank"
+        }
+    },
+    "revenue-expenditure": {
+        "title": "List of accounts to ensure collection - payment",
+        "type": "Type",
+        "total-value": "Total income/expenditure (VND)",
+        "settlement-success": "Account settlement to ensure successful collection and payment"
+    }
+}
